@@ -1,0 +1,316 @@
+POINTERS
+
+int a = 5;
+	int* ptr = &a;
+	
+	cout << &ptr << endl;
+	cout << &a << endl;
+	cout << ptr << endl;
+	cout << *ptr << endl;
+
+Pointerlar bir deðiþkenin ramde bulundugu adresin deðerini alýrlar burda 
+ptr=a nýn adresidir
+*ptr=a nýn deðeridir
+Eðer *ptr = 8 dersek a nýnda deðeri deðiþmiþ olur *ptr de yapýlacak deðer deðiþikliði o adresdeki deðeri deðiþtirmiþ olur.
+pointer kullanma mantýgý ornegi aþaðýda verildi
+
+void degerDegistir(int* a)
+{
+	*a = 50;
+}
+
+int main()
+{
+	
+	int b = 32;
+	degerDegistir(&b);
+	cout << b << endl;
+
+Pointer Aritmetiði ve Arraylerle Pointerlar Arasýndaki Ýliþki
+
+Her array birer pointer her pointerda birer arraydir demiþti þadi hoca.
+
+int array[] = { 1,2,3,4 };
+	cout << array << endl;  burda adres /1
+	int* ptr = array;       
+	cout << ptr << endl;      1 ile ayný adres döner
+	cout << *ptr << endl;      1 deðeri verir
+	cout << *(ptr + 1) << endl;    2 degeri verir
+	cout << ptr[1] << endl;         2 deðeri verir
+
+
+
+
+
+REFERANSLAR-REFERENCES
+
+int a=10;
+int &ref=a;
+ref++;
+
+//yaparsak ref a nýn bir referencesi olmuþ oluyor ve cout larsak þuan 11 degeri yazar.
+
+void degerDegistir ( int &ref )
+{
+ref=20;
+}
+
+mainde
+
+degerDegistir(a);
+cout<<a;
+
+//yaparsak 20 degerini görmüþ oluruz çünkü yazdýgýmýz fonk giren degiskenin degerini degistirmiþ olur.Binevi pointer gibi ama tam bir pointer degildir.
+
+int &ref;
+ref=a;  //böyle bir tanýmlamaya izin verilmez pointer gibi,
+
+int &ref= a;  //dogrusu budur.
+
+ARRAYLER VE FONKSÝYONLAR
+
+void printArray (int array[] , int size)
+
+void printArray (int *p , int size) // pointer mantýgýylada yapabilriz çünkü pointerlar dizidir
+
+mainde
+
+int a[5] = {1,2,3,4,5};
+printArray (a,5);  //fonk kullanarak diziyi yazdýrabilirz böylelikle
+
+CONST ANAHTAR KELÝMESÝ
+
+const int i = 10;
+i=20; // yapamazsýn hata verir çünkü const anahtar kelimesi bu deðiþkenin deðerini deðiþtirmene izin vermez onu kitler gibi düþünebilirsin.
+ 
+const int a[]={...};
+
+a[2]=5; // dedin mesela izin vermez sana çünkü const ile dizileride kitleyebilirsin.
+
+POÝNTERLAR VE CONST
+
+Pointerla gösterilen yerin deðeri deðiþemez const kullanýlýrsa ama pointerin gösterdiði yer deðiþebilir.
+
+*void printArrayConst(const int* p1, const int* p2) 
+{                            
+	int sayac = 0;
+	for (; p1 != p2; p1++)
+	{	
+		sayac++;
+		if (sayac == 5)
+		{
+			break;
+		}
+		cout << *(p1+1) << " ";
+	}
+}
+
+int main()
+{
+	int array[] = { 10,20,30,40,50,60,70,80,90,100 };
+	printArrayConst(array+2, array+7);*/
+
+//pointerin gosterdigi deger degisemez ama farklý degerleri gösterebilir
+
+
+
+STRUCTURE
+struct Employee
+{
+	int id;
+	string name;
+	string department;
+};
+
+mainde
+
+Employee Employee1={53,Muhammet HANEDAN,Game Dev};
+
+// employe diye structure oluþturma ornegi ordan bir obje aldýk ve info girdik.
+
+cout<<Employee1.name;
+
+ // olusturdugumuz objenin name deðiþkeni degerini yazar =Muhammet HANEDAN
+
+POÝNTERLAR VE STRUCTURE
+
+struct Employee
+{
+	int id;
+	string name;
+	string department;
+};
+
+int main()
+{
+	
+	Employee Employee1 = { 53,"Muhammet HANEDAN","Game Developer" };
+	Employee* p1 = &Employee1;
+	cout << p1->name;
+
+// struct yapýsýnda pointer kullanýmýný gosteren ornegimiz p1->name; kullanýlýr p1.name degil pointer oldugu için
+
+FONKSÝYONLAR VE STRUCTURES
+
+Fonksiyon pointer structure içeren örneðimiz
+
+void showEmployee(Employee nesne)
+{
+	cout << nesne.id << endl;
+	cout << nesne.name << endl;
+	cout << nesne.department << endl;
+}
+
+void setEmployee(Employee* nesne)
+{
+	cin >> nesne->id;
+	cin >> nesne->name;
+	cin >> nesne->department;
+}
+
+int main()
+{
+	
+	Employee Employee1 = { 53,"Muhammet HANEDAN","Game Developer" };
+	showEmployee(Employee1);
+	Employee* p = &Employee1;
+	setEmployee(p);
+	showEmployee(Employee1);
+dýþardýdan parametreleri alan show fonksiyonunu þöyle tanýmlayabilirim
+
+void setEmployee(Employee* nesne,int id,string name,string department)
+{
+	nesne->id = id;
+	nesne->name = name;
+	nesne->department = department;
+}
+
+Ýç içe yapýlar ( Nested Structure )
+
+struct Adress
+{
+	string city;
+	int no;
+};
+
+struct Employee
+{
+	int id;
+	string name;
+	string department;
+	Adress adress;
+};
+mainde
+Employee Employee1 = { 53,"Muhammet HANEDAN","Game Developer" };
+	Employee1.adress.city = "Rize";
+	Employee1.adress.no = 1; //buraya dikkat et
+	showEmployee(Employee1);
+Structure nin içinde bir stuructureye eriþmek için yine nokta kullandýk
+Alttaki gibide tanýmlanabilir içinde bir tane daha {} kullandýk dikkat et
+Employee Employee1 = { 53,"Muhammet HANEDAN","Game Developer",{"Rize",1} };
+
+Ýç içe Yapýlar ve Pointerlar
+
+struct Adress
+{
+	string city;
+	int no;
+};
+
+struct Employee
+{
+	int id;
+	string name;
+	string department;
+	Adress *adress;
+};
+Employee structure içinde pointer kullanarak bir structure tanýmladýk.
+Mainde yaptýgýmýz bazý ornekler þunlar
+
+Adress adress = { "Rize",1 };
+	Employee Employee1 = { 53,"Muhammet HANEDAN","Game Developer",&adress};
+	showEmployee(Employee1);
+	cout << Employee1.adress->city << endl;
+	Employee* ptr = &Employee1;
+	cout << ptr->adress->no << endl; // buraya dikkat
+
+SIZEOF OPERATORÜ
+
+Dinamik bellek yönetimi için ihtiyacýmýz olucak.Basit örnek aþaðýda
+
+cout << sizeof(int) << endl; // 4 degerini verdi
+	cout << sizeof(string) << endl; //40 degerini verdi
+	//yani girilen ifadenin bellekte ne kadar yer tuttuðunu gösterdi
+	Employee Employee1 = { 53,"Muhammet HANEDAN","Game Developer" };
+	cout << sizeof(Employee1) << endl; //96 degerini verdi
+
+Dinamik Bellek Yönetimi - new ve delete
+
+int *p=new int;
+ //burda diyoruzki bir tane pointer tanýmla ramde bir tane integerlýk yer ayýrýlsýn.
+
+delete ptr;
+ //Dersek ptr nin bellekde kullandýgý tüm alanlar belleðe geri verilsin demiþ oluruz
+
+int *p;
+p=new int[5];
+yada
+int*p=new int[5]  //bunlar pointerýmýza 5 tane intlik yer ayýrtýr bellekte.
+delete [] p; //dersek bellekte kullandýgýmýz alan rame geri verilir.
+
+*Null Pointer, Dangling Referans ve Pointerlar
+
+int* ptr = nullptr; 
+	/*Burda demiþ oldukki c++ a bu tanýmladýgýmýz ptr pointeri þu an ramde hiç bir yer göstermiyor 
+	Pointeri böyle baþlatmak çok daha güvenli bir yoldur */
+	
+	ptr = new int; // ptr mize artýk 1 tane integerlik yer ayýrttýk pointerimiz artýk 1 tane yer gösteriyor
+	
+	*ptr = 10; //ptr mizin ayrýlan yeri 10 deðerini gösteriyor.
+	
+	delete ptr; 
+	/*Artýk ptr mize ayrýlan bir yeri rame geri verdik onu pc kullanýyor ama ptr miz hala o yeri gösteriyor
+	yani pointerimiz artýk geçerli olmayan bir alana iþaret etmektedir iþte buna DANGLING REFERENCE deniyor
+	anlamý gösterdiði yerde geçerli bir obje olmayan referans demektir*/
+	
+	*ptr = 10; //Dersen þimdi pc nin kullandýgý bir yere 10 deðerini yazmaya çalýsýyorsun demektir.
+	/*Ýþte bu runtime hatalarýna neden olmaktadýr Baþka bir örnek aþaðýda*/
+
+	int* ptr1 = nullptr;
+	int* ptr2 = nullptr;
+	ptr1 = new int;
+	ptr2 = ptr1; //Dersek artýk ptr2 miz ptr1 in gösterdiði yeri göstermektedir.
+	delete ptr1; //Yaparsak ptr1 dangling referenceye dönüþmüþ olucak ayný þekilde ptr2 de dangling ref olur
+
+Foreach Döngüsü
+
+int a[] = { 10,20,30,40,50 };
+	for (int item : a)
+	{
+		cout << item << endl;
+	}
+
+Fonksiyon Overloading Nedir ?
+
+ayný isimde fonksiyonu farklý parametrelerle tanýmlamaktýr
+mesela
+
+void selamla()
+{
+	cout << "selam" << endl;
+}
+
+
+void selamla(string name)
+{
+	cout << "selam " << name << endl;
+}
+
+
+int main()
+{
+
+
+	
+	selamla();
+	selamla("Muhammet");

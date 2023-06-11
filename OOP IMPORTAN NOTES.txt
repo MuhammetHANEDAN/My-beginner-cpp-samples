@@ -1,0 +1,165 @@
+ERÝÞÝM BELÝRLEYÝCÝLER
+
+private --> Sadece classýn içinden eriþilebilir.Dýþardan eriþilemez.(Default-varsayýlan) olarak bu kullanýlýr.
+Main kýsýmdan eriþilemez.
+
+protected --> Sadece class içerisinde ve miras alan classlar içerisinde eriþilebilir.Main kýsýmdan eriþilemez.
+
+public --> Her yerden eriþilebilir.
+
+
+
+
+
+CONSTRUCTORS
+
+Constructorlar 2 çeþittir parametre almayan(default constructor) ve parametre alan costructor.
+Biz bir constructor atamasý yapmasakda c++ varsayýlan olarak bir constructor atamasý yapmaktadýr biz görmesekte.
+Constructor demek mainde bir nesne oluþturulunca o nesnenin ilk olarak
+mainde olusturulduðunda çalýþan yapýdýr.Eriþim için publicte
+tanýmladýk.Her zaman classýn ismiyle tanýmlanýrlar örnegin public altýnda "Student();"
+Student Student[5]; //þeklinde array ile çalýþtýrýlabilirler.
+
+PARAMETRELÝ CONSTRUCTOR
+
+Diyelimki classta 2 adet cons tanýmladýn birisi parametre almayan öbürü parametre alan cons.Mainde nesneyi
+parametreli olarak çaðýrýrsan otomatikmen parametreli olan constructor ý alýp çalýþtýracaktýr.Nesneye parametre
+vermezsende gidip parametresiz constructoru çalýþtýracaktýr.
+örnek  mainde  Student Student1(x,x,x); --> burda parametreli constructor çalýþtýrýr
+			   Student Student1; --> burada parametresiz constructor çalýþýr
+
+Diyelimki mainde Student Student1(x); Böyle bir parametreli constructor çalýþtýrmak istedin çalýþmasý için
+1 parametre içeren constructorun sýnýfta tanýmlý olmasý gerekiyor yoksa çalýþmaz.
+
+
+
+
+
+DESTRUCTORLAR
+
+Nesne kaybolunca çalýþýrlar.Classta sadece birer tane tanýmlanabilir.
+~Student(); diye tanýmlanýrlar classta.Parametre almazlar.
+Diyelimki mainde þöyle biþi yazdýk
+	if(true)
+	{
+		Student Student5;
+	{
+		Burada lokal bir nesne olmuþ oluyor blop bittiði an destructor çalýþýr.Yani destructor nesne yok
+		olduðu an çalýþýr.
+
+
+
+
+
+COPY CONSTRUCTOR
+
+Student(const Student& oth); //copy constructor Class içinde boyle tanýmlanýrlar.Bir nesne oluþtururken
+oluþturulmuþ bir nesnenin deðerlerini kopyalayarak yeni bir nesne oluþturmamýza yararlar.
+mainde örnek
+	Student Student1("Muhammet");
+	Student Student2(Student1);
+	Student2.displayInformation(); // Olusturdugumuz Student1 nesnesininin bilgilerini kopyalayarak Student2
+	nesnesini olusturduk
+
+
+
+
+
+NOTLAR
+
+Ýf else kýsa kullanýmý ornegi
+int a = 7;
+a > 6 ? cout << "t" : cout << "f";
+mainde bunu yaparsak t yazar.
+
+CLASSTA class donusumu fonksiyon
+class
+complexNumber addComplex(const complexNumber& oth);
+complexNumber substractComplex(const complexNumber& oth);
+
+Fonk tanýmlamalarý ornek
+complexNumber complexNumber::addComplex(const complexNumber& oth)
+{
+	complexNumber result;
+	real = real + oth.real;
+	imag = imag + oth.imag;
+	return result;
+}***** eðer fonksiyonun dönüþ tipi senin sýnýfýnla ayný ise orda bir copy constructor çalýþýr ->return edince
+
+
+
+
+
+ÖNEMLÝ NOTLAR
+
+POINTER MANTIGINI ÝYÝ ANLAMAK LAZIM C++ == POÝNTER GÝBÝ :D
+
+Aþaðýda pointerlarý daha iyi kavramak için bir örnek yaptým
+
+	int* data = new int[5];     //data pointerýmýza bellekte 5 int lik yer ayýrdýk
+	for (int i = 0; i < 5; i++) //data pointerýmýza deðerleri verdik
+	{
+		data[i] = i;
+	}
+	int* temp_data = new int[10];//temp_data diye pointer oluþturduk 10 int lik
+	for (int i = 0; i < 5; i++)  //temp_data ya data daki deðerleri verdik  þu an bu deðerler ramde farklý yerlerde tutulmakta
+	{
+		temp_data[i] = data[i];
+	}
+	cout << "&temp_data[0] = " << &temp_data[0] << endl; //adresi verir
+	cout << "&data[0] = " << &data[0] << endl;           //adresi verir
+	cout << "temp_data[1] = " << temp_data[1] << endl;      //1 degerini verir
+	cout << "temp_data[5] = " << temp_data[5] << endl;     //karmaþýk bi deðer verdi çünkü 5.indexi girmedik
+	temp_data[5] = 22; //5. indexi girdik
+	cout << "delete data [] activated" << endl;
+	delete[] data;//data pointerýnýn ramde tuttugu adresi rame iade ettik attýk data pointeri bir yer göstermiyor
+	cout << "data = temp_data command has been given" << endl;
+	data = temp_data;// data pointerýmýz temp_data pointerinin gösterdiði yeri gösteriyor artýk
+	cout << "&data[0] = " << &data[0] << endl; // data=temp_data yaptýgýmýz için ilk satýrdaki adresi verecektir
+	cout << "data[0] = " << data[0] << endl; // 0
+	cout << "temp_data[0] = " << temp_data[0] << endl; // 0
+	cout << "data[1] = " << data[1] << endl; //1
+	cout << "temp_data[1] = " << temp_data[1] << endl; //1
+	cout << "temp_data[5] = " << temp_data[5] << endl; //22 veriyor artýk çünkü temp_data[5] = 22 yapmýþtk
+	cout << "data[4] = " << data[4] << endl; //4
+	cout << "data[5] = " << data[5] << endl; //22
+
+	------------------
+
+	Burada anlatmak istediðim þey þu, 2. fonksiyona bakarsan her þey çok daha hýzlý þekilde yapýlýr.1.fonksiyonda
+kopyalama iþlemi yapýlacak atama iþlemi yapýlacak return iþlemi yapýlacak sonra bide mainde bunu deðiþkene vermek
+için bir atama iþlemi daha yapacaksýn ve düþünki bunu milisaniyelerde yapman lazým uçaða giden füzeye yön veriyorsun
+diyelim hýzlýca yapmak için direk 2. fonksiyon gibi yapýlar kullanmak gerekir.2. fonksiyonda kopyalama return atama
+iþlemleri yapýlmaz çünkü direk o adresteki deðerde deðiþimler hýzlýca yapýlýr.
+
+int yonHesapla(int x)
+{
+	//hesaplar yapýldý
+	x = 22;
+		return x_;
+}
+
+void yonHesapla2(int* p)
+{
+	//hesaplar yapýldý
+	*p = 30;
+}
+
+int main()
+{
+	int a = 55;
+	a = yonHesapla(a);
+	cout << a << endl;
+	yonHesapla2(&a);
+	cout << a << endl;
+
+	-----------
+	
+	ref ornegi aþaðýda
+	void fonk(int &x) //tek bir deger için reference örnegimiz direk deðiþkenin adresini yolladýk
+{
+	x = 2 * x_;
+}
+
+
+*/
