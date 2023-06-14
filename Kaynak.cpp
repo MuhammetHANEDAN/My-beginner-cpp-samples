@@ -3,7 +3,7 @@
 #include <time.h>
 #include <math.h>
 #include <string.h>
-
+#include "Matrix.h"
 
 using namespace std;
 
@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
 
-	cout << "hi word";
+	Matrix matrix1(3, 5);
 
 
 

@@ -138,6 +138,7 @@
     <ClInclude Include="bankAccount.h" />
     <ClInclude Include="complexNumber.h" />
     <ClInclude Include="Date.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Triangle.h" />
   </ItemGroup>
