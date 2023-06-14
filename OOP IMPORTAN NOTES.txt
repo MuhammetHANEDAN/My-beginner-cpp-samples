@@ -167,8 +167,11 @@ int main()
 
 EKSIKLER
 
-2 boyutlu dizileri 2 boyutlu pointerlar ile temsil etmek ve new delete komutunu onlara etkin bir þekilde
-kullanmak aþaðýda onunla ilgili örnek yapýyoruz
+* Classta dinamik dizi oluþtur sonra bir nesne ile bir nesneyi toplayýp yeni bir nesne oluþmasý fonksi
+yonunu yaz 
+
+* 2 boyutlu dizileri 2 boyutlu pointerlar ile temsil etmek ve new delete komutunu onlara etkin bir þekilde
+kullanmak aþaðýda onunla ilgili örnek yapýyoruz devam ettirirsin
 int a[3][3];
 	for (int i = 0; i < 3; i++)
 	{	
@@ -189,5 +192,7 @@ int a[3][3];
 
 	int (*p)[3] = a;
 	cout << p + 1;
+
+	* String sýnýfýnýn fonksiyonlarý ile birlikte etkin kullanýmý - Dosya iþlemleri 
 
 ------------------------------------
