@@ -33,6 +33,7 @@ Matrix::Matrix(int r, int c)
 	}
 	row = r;
 	col = c;
+	
 	cout << "Matrix created" << endl;
 }
 

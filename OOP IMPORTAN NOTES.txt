@@ -163,3 +163,31 @@ int main()
 
 
 */
+----------------------------------------------
+
+EKSIKLER
+
+2 boyutlu dizileri 2 boyutlu pointerlar ile temsil etmek ve new delete komutunu onlara etkin bir þekilde
+kullanmak aþaðýda onunla ilgili örnek yapýyoruz
+int a[3][3];
+	for (int i = 0; i < 3; i++)
+	{	
+		for (int j = 0; j < 3; j++)
+		{
+			a[i][j] = j;
+		}
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			cout << a[i][j] << " ";
+		}
+		cout << "" << endl;
+	}
+
+	int (*p)[3] = a;
+	cout << p + 1;
+
+------------------------------------
