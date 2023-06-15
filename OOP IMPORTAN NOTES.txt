@@ -62,7 +62,10 @@ la sýnýftanda miras alýnabilir yani :D
 Sýnýflar arasýnda alt üst iliþkisi saðlar
 Mesela hayvan sýnýfý ürettik oraya ortak özellikler yazdýk sonra o sýnýftan miras alarak kedi sýnýfýný
 ný ürettik oraya kediye özel olanlarý yazdýk, hayvan sýnýfýndan miras alarak köpek ürettik gibi.
-* Priavate olanlar miras verilemezler 
+* Priavate olanlar miras verilemezler
+* Üst sýnýfýn Constructor ve destructor miras alýnamazlar bir þekilde kullanýlabilirler.
+* Üst sýnýfýn friend fonksiyonlarý miras alýnamaz
+* Üst sýnýftaki eþitlikleri miras alamayýz
 
 - Inheritance acces levels
 
@@ -70,6 +73,8 @@ class derivedClass :public baseClass > acces level burda public olarak tanýmladý
 Eðer boþ býraksaydýk priavate olarak default tanýmlanacaktý
 Priavate olursa miras alýnan classtaki protected ve public olan özellik ve fonksiyonlar miras alan clasý
 mýzýn içinde priavate olarak tanýmlanýrlar.
+Protected olursa miras alýnan classtaki public ve protectedlar protected olarak alýnýrlar.
+Public olursa protectedlar protected olarak alýnýr publicler public olarak alýnýrlar.
 
 - Syntax yapýsý
 

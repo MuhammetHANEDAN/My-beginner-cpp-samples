@@ -4,13 +4,17 @@ using namespace std;
 
 class baseClass 
 {
+private:
+	int priavateX;
 protected:
+	int protectedX;
 	int x;
-public:
 	void setXValue(int mainX)
 	{
 		x = mainX;
 	}
+public:
+	int publicX;
 	int getXValue()
 	{
 		return x;
@@ -21,13 +25,14 @@ public:
 	}
 };
 
-class derivedClass : baseClass
+class derivedClass :public baseClass
 {
 public:
 	int y;
 	void setYValue(int mainY)
 	{
 		y = mainY;
+		
 	}
 	int getYValue()
 	{
@@ -36,5 +41,6 @@ public:
 	void print2()
 	{
 		cout << "Y =" << y << endl;
+		
 	}
 };

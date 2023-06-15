@@ -12,7 +12,7 @@ int main()
 {
 	baseClass base1;
 	derivedClass obj1; 
-	//obj1.getXValue();
+	
 	
 	
 
