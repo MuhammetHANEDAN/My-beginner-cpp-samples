@@ -64,7 +64,14 @@ Mesela hayvan sýnýfý ürettik oraya ortak özellikler yazdýk sonra o sýnýftan mira
 ný ürettik oraya kediye özel olanlarý yazdýk, hayvan sýnýfýndan miras alarak köpek ürettik gibi.
 * Priavate olanlar miras verilemezler 
 
-Syntax yapýsý
+- Inheritance acces levels
+
+class derivedClass :public baseClass > acces level burda public olarak tanýmladýk
+Eðer boþ býraksaydýk priavate olarak default tanýmlanacaktý
+Priavate olursa miras alýnan classtaki protected ve public olan özellik ve fonksiyonlar miras alan clasý
+mýzýn içinde priavate olarak tanýmlanýrlar.
+
+- Syntax yapýsý
 
 class baseClass 
 {

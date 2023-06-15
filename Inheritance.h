@@ -21,7 +21,20 @@ public:
 	}
 };
 
-class derivedClass :public baseClass
+class derivedClass : baseClass
 {
-
+public:
+	int y;
+	void setYValue(int mainY)
+	{
+		y = mainY;
+	}
+	int getYValue()
+	{
+		return y;
+	}
+	void print2()
+	{
+		cout << "Y =" << y << endl;
+	}
 };
