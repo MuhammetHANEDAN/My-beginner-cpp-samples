@@ -3,7 +3,7 @@
 #include <time.h>
 #include <math.h>
 #include <string.h>
-#include "Matrix.h"
+#include "Inheritance.h"
 
 using namespace std;
 
@@ -11,15 +11,10 @@ using namespace std;
 int main()
 {
 
-	Matrix matrix(3, 3);
-	matrix.randomSet();
-	matrix.display();
-	Matrix matrix2(4, 3);
-	matrix2.randomSet();
-	matrix2.display();
-	Matrix result = matrix.addMatrix(matrix2);
-	result.display();
-	
+	derivedClass obj1; /* Base classtan miras aldýgýmýz için onun fonksiyonlarýne eriþebiþiyoruz
+	x deðiþkeninide aldýk ama protected oldugu için mainden eriþememiz normal yani obj1.x yapamýyoruz*/
+	obj1.setXValue(5);
+	obj1.print(); // X=5 degerini verdi
 	
 	
 

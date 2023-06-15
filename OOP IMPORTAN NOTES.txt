@@ -9,8 +9,6 @@ public --> Her yerden eriþilebilir.
 
 
 
-
-
 CONSTRUCTORS
 
 Constructorlar 2 çeþittir parametre almayan(default constructor) ve parametre alan costructor.
@@ -33,8 +31,6 @@ Diyelimki mainde Student Student1(x); Böyle bir parametreli constructor çalýþtýr
 
 
 
-
-
 DESTRUCTORLAR
 
 Nesne kaybolunca çalýþýrlar.Classta sadece birer tane tanýmlanabilir.
@@ -48,9 +44,6 @@ Diyelimki mainde þöyle biþi yazdýk
 		olduðu an çalýþýr.
 
 
-
-
-
 COPY CONSTRUCTOR
 
 Student(const Student& oth); //copy constructor Class içinde boyle tanýmlanýrlar.Bir nesne oluþtururken
@@ -61,8 +54,49 @@ mainde örnek
 	Student2.displayInformation(); // Olusturdugumuz Student1 nesnesininin bilgilerini kopyalayarak Student2
 	nesnesini olusturduk
 
+INHERITANCE (Miras)
 
+Var olan sýnýftan baþka sýnýflar türetmeyi ve bu türetme aþamasýnda bazý özellik ve fonksiyonlarý aktar
+ma iþlemidir.Mesela biz dünyaya gelirken anne ve babadan özellikler aldýk gibi düþünülebilir.Birden faz
+la sýnýftanda miras alýnabilir yani :D
+Sýnýflar arasýnda alt üst iliþkisi saðlar
+Mesela hayvan sýnýfý ürettik oraya ortak özellikler yazdýk sonra o sýnýftan miras alarak kedi sýnýfýný
+ný ürettik oraya kediye özel olanlarý yazdýk, hayvan sýnýfýndan miras alarak köpek ürettik gibi.
+* Priavate olanlar miras verilemezler 
 
+Syntax yapýsý
+
+class baseClass 
+{
+protected:
+	int x;
+public:
+	void setXValue(int mainX)
+	{
+		x = mainX;
+	}
+	int getXValue()
+	{
+		return x;
+	}
+	void print()
+	{
+		cout << "X = " << x << endl;
+	}
+};
+
+class derivedClass :public baseClass
+{
+
+};
+
+int main()
+{
+
+	derivedClass obj1; /* Base classtan miras aldýgýmýz için onun fonksiyonlarýne eriþebiþiyoruz
+	x deðiþkeninide aldýk ama protected oldugu için mainden eriþememiz normal yani obj1.x yapamýyoruz*/
+	obj1.setXValue(5);
+	obj1.print(); // X=5 degerini verdi
 
 
 NOTLAR

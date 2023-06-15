@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\OOP Giris">
+      <UniqueIdentifier>{b4f524c4-9212-41e5-b9c3-32564c6df48a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\Inheritance">
+      <UniqueIdentifier>{11db303e-9dbc-4c81-9aaa-a43296789001}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kaynak.cpp">
@@ -31,23 +37,26 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Date.h">
-      <Filter>Üst Bilgi Dosyaları</Filter>
-    </ClInclude>
-    <ClInclude Include="Student.h">
-      <Filter>Üst Bilgi Dosyaları</Filter>
-    </ClInclude>
-    <ClInclude Include="Triangle.h">
-      <Filter>Üst Bilgi Dosyaları</Filter>
-    </ClInclude>
     <ClInclude Include="bankAccount.h">
-      <Filter>Üst Bilgi Dosyaları</Filter>
+      <Filter>Üst Bilgi Dosyaları\OOP Giris</Filter>
     </ClInclude>
     <ClInclude Include="complexNumber.h">
-      <Filter>Üst Bilgi Dosyaları</Filter>
+      <Filter>Üst Bilgi Dosyaları\OOP Giris</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
+      <Filter>Üst Bilgi Dosyaları\OOP Giris</Filter>
     </ClInclude>
     <ClInclude Include="Matrix.h">
-      <Filter>Üst Bilgi Dosyaları</Filter>
+      <Filter>Üst Bilgi Dosyaları\OOP Giris</Filter>
+    </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>Üst Bilgi Dosyaları\OOP Giris</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Üst Bilgi Dosyaları\OOP Giris</Filter>
+    </ClInclude>
+    <ClInclude Include="Inheritance.h">
+      <Filter>Üst Bilgi Dosyaları\Inheritance</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
