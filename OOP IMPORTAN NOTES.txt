@@ -167,6 +167,8 @@ int main()
 
 EKSIKLER
 
+* SOLID PRINCIPLES öðren
+
 * Classta dinamik dizi oluþtur sonra bir nesne ile bir nesneyi toplayýp yeni bir nesne oluþmasý fonksi
 yonunu yaz 
 
@@ -196,3 +198,6 @@ int a[3][3];
 	* String sýnýfýnýn fonksiyonlarý ile birlikte etkin kullanýmý - Dosya iþlemleri 
 
 ------------------------------------
+
+
+
