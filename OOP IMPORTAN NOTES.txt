@@ -67,15 +67,6 @@ ný ürettik oraya kediye özel olanlarý yazdýk, hayvan sýnýfýndan miras alarak köp
 * Üst sýnýfýn friend fonksiyonlarý miras alýnamaz
 * Üst sýnýftaki eþitlikleri miras alamayýz
 
-- Inheritance acces levels
-
-class derivedClass :public baseClass > acces level burda public olarak tanýmladýk
-Eðer boþ býraksaydýk priavate olarak default tanýmlanacaktý
-Priavate olursa miras alýnan classtaki protected ve public olan özellik ve fonksiyonlar miras alan clasý
-mýzýn içinde priavate olarak tanýmlanýrlar.
-Protected olursa miras alýnan classtaki public ve protectedlar protected olarak alýnýrlar.
-Public olursa protectedlar protected olarak alýnýr publicler public olarak alýnýrlar.
-
 - Syntax yapýsý
 
 class baseClass 
@@ -109,6 +100,67 @@ int main()
 	x deðiþkeninide aldýk ama protected oldugu için mainden eriþememiz normal yani obj1.x yapamýyoruz*/
 	obj1.setXValue(5);
 	obj1.print(); // X=5 degerini verdi
+
+- Miras alma iþleminde constructor destructor ve c.const. mantýgý
+
+int main()
+{
+	baseClass base1;
+	derivedClass obj1; 
+
+çýktýmýz þöyle olucaktýr
+baseClass Constructor worked
+baseClass Constructor worked
+derivedClass Constructor worked
+derivedClass Destructor worked
+baseClass Destructor worked
+baseClass Destructor worked
+
+Önce baseclass ýn constu , sonrasýnda derived classýn miras aldýðý baseClassýn içindeki constructor
+sonra derivedin kendi constu çalýþýr. Destructor da durum tam tersidir önce obj1 in desti sonra obj1
+içinde bulunan baseClass desti sonrada ilk baþta olan base1 in desti çalýþmýþtýr.
+
+Copy constructor mantýgý ise söyle
+
+int main()
+{
+	
+	derivedClass obj1(3, 5);
+	derivedClass obj2(obj1);
+
+çýktý þu þekildedir
+
+baseClass Constructor worked
+derivedClass Constructor worked
+baseClass Constructor worked
+derivedClass copy-const. worked
+derivedClass Destructor worked
+baseClass Destructor worked
+derivedClass Destructor worked
+baseClass Destructor worked
+
+önce obj1 baseClass const sonra obj1 const sonra obj2 baseClass const sonra copy constructor çalýþtý
+sonra obj2 için derived dest sonra baseDest sonrasýnda obj1 için derived dest ve baseDest çalýþmýþtýr.
+
+* derivedClass içinde constructorda farklý bir gösterim yapýsý
+
+derivedClass(int mainX = 0, int mainY = 0):baseClass (mainX) -> burada
+	{
+		// x=mainX yok onu :baseClass (mainX) yaparak saðlamýþ olduk
+		y = mainY; 
+		cout << "derivedClass Constructor worked" << endl;
+	}
+
+- Inheritance acces levels
+
+class derivedClass :public baseClass > acces level burda public olarak tanýmladýk
+Eðer boþ býraksaydýk priavate olarak default tanýmlanacaktý
+Priavate olursa miras alýnan classtaki protected ve public olan özellik ve fonksiyonlar miras alan clasý
+mýzýn içinde priavate olarak tanýmlanýrlar.
+Protected olursa miras alýnan classtaki public ve protectedlar protected olarak alýnýrlar.
+Public olursa protectedlar protected olarak alýnýr publicler public olarak alýnýrlar.
+
+
 
 
 NOTLAR

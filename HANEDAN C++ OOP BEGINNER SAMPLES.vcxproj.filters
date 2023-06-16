@@ -58,5 +58,8 @@
     <ClInclude Include="Inheritance.h">
       <Filter>Üst Bilgi Dosyaları\Inheritance</Filter>
     </ClInclude>
+    <ClInclude Include="Multiple Inheritance.h">
+      <Filter>Üst Bilgi Dosyaları\Inheritance</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

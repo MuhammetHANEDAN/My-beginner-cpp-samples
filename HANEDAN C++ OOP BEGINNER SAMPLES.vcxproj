@@ -140,6 +140,7 @@
     <ClInclude Include="Date.h" />
     <ClInclude Include="Inheritance.h" />
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="Multiple Inheritance.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Triangle.h" />
   </ItemGroup>

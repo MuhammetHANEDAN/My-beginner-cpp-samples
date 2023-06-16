@@ -10,8 +10,11 @@ using namespace std;
 
 int main()
 {
-	baseClass base1;
-	derivedClass obj1; 
+	
+	derivedClass obj1(3, 5);
+	derivedClass obj2(obj1);
+	cout << obj2.getXValue() << endl;
+	cout << obj2.getYValue() << endl;
 	
 	
 	
