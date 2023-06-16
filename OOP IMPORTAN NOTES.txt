@@ -7,7 +7,16 @@ protected --> Sadece class içerisinde ve miras alan classlar içerisinde eriþileb
 
 public --> Her yerden eriþilebilir.
 
+KAVRAMLAR
 
+-Encapsulation
+
+- Polymorphism (Çok Biçimlilik)
+Bir nesnenin farklý durumlar karþýsýnda farklý davranýþlar ve sonuçlar üretmesidir.Reelden örnek vermek
+gerekirse biz anne ve babamýz için bir çocuðuz.Üniversitede hocalar karþýsýnda bir öðrenciyiz.Ýþ yerin
+de patron için bir çalýþanýz gibi.
+compile time - function overloading & operator overloading
+run time - function overriding
 
 CONSTRUCTORS
 
