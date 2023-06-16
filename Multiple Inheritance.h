@@ -20,6 +20,7 @@ public:
 	{
 		cout << "AClass destructor worked" << endl;
 	}
+	void nbrlan(){}
 };
 
 
@@ -58,6 +59,7 @@ public:
 	~CClass()
 	{
 		cout << "CClass destructor worked" << endl;
+		AClass::nbrlan();
 	}
 	void print() { cout <<"X = "<< x << endl <<"Y = "<< y << endl <<"Z = "<< z << endl;; }
 };
