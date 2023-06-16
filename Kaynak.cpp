@@ -4,6 +4,7 @@
 #include <math.h>
 #include <string.h>
 #include "Inheritance.h"
+#include "Multiple Inheritance.h"
 
 using namespace std;
 
@@ -11,10 +12,7 @@ using namespace std;
 int main()
 {
 	
-	derivedClass obj1(3, 5);
-	derivedClass obj2(obj1);
-	cout << obj2.getXValue() << endl;
-	cout << obj2.getYValue() << endl;
+	CClass cObject;
 	
 	
 	

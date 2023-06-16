@@ -101,6 +101,15 @@ int main()
 	obj1.setXValue(5);
 	obj1.print(); // X=5 degerini verdi
 
+- Inheritance acces levels
+
+class derivedClass :public baseClass > acces level burda public olarak tanýmladýk
+Eðer boþ býraksaydýk priavate olarak default tanýmlanacaktý
+Priavate olursa miras alýnan classtaki protected ve public olan özellik ve fonksiyonlar miras alan clasý
+mýzýn içinde priavate olarak tanýmlanýrlar.
+Protected olursa miras alýnan classtaki public ve protectedlar protected olarak alýnýrlar.
+Public olursa protectedlar protected olarak alýnýr publicler public olarak alýnýrlar.
+
 - Miras alma iþleminde constructor destructor ve c.const. mantýgý
 
 int main()
@@ -151,17 +160,36 @@ derivedClass(int mainX = 0, int mainY = 0):baseClass (mainX) -> burada
 		cout << "derivedClass Constructor worked" << endl;
 	}
 
-- Inheritance acces levels
+- Multiple Inheritance (Birden fazla sýnýftan miras alma )
 
-class derivedClass :public baseClass > acces level burda public olarak tanýmladýk
-Eðer boþ býraksaydýk priavate olarak default tanýmlanacaktý
-Priavate olursa miras alýnan classtaki protected ve public olan özellik ve fonksiyonlar miras alan clasý
-mýzýn içinde priavate olarak tanýmlanýrlar.
-Protected olursa miras alýnan classtaki public ve protectedlar protected olarak alýnýrlar.
-Public olursa protectedlar protected olarak alýnýr publicler public olarak alýnýrlar.
+Syntax yapýsý
+
+A ve B sýnýfý oluþturduk ve A ve B den public level miras alan bir C sýnýfý oluþturuldu aþaðýda
+
+class CClass:public AClass,public BClass
+{
+
+}
+ 
+ Mainde bir nesne oluþturup çalýþtýrýrsak
+
+ int main()
+{
+	
+	CClass cObject;
+
+AClass constructor worked
+BClass constructor worked
+CClass constructor worked
+CClass destructor worked
+BClass destructor worked
+AClass destructor worked       
+
+çýktý bu þekilde olur.
 
 
 
+--------------------------------------------------------
 
 NOTLAR
 
