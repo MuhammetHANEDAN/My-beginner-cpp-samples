@@ -18,6 +18,12 @@ de patron için bir çalýþanýz gibi.
 compile time - function overloading & operator overloading
 run time - function overriding
 
+- Function Overriding (Fonksiyonlarýn Çiðnenmesi)
+Diyelimki B A dan miras alsýn ve A da void print() fonksiyonu var bunu B nin içinde ayný isimle
+void print() ile tanýmladýðýmýz zaman artýk print fonksiyonunu override etmiþ ezmiþ olduk artýk B sýný
+fýnda kullanýlan print fonksiyonu override etmiþ olduðumuz fonksiyondur.
+* Fonksiyon ismi ve parametresi ayný olmalýdýr Function override diyebilmek için
+
 CONSTRUCTORS
 
 Constructorlar 2 çeþittir parametre almayan(default constructor) ve parametre alan costructor.
@@ -196,6 +202,16 @@ AClass destructor worked
 
 çýktý bu þekilde olur.
 
+* A B ve C classý oluþturdk C, A ve B den miras aldý A da x B de y deðiþkeni vardý public olarak C public
+olarak miras aldý.Þimdi C sýnýfý içerisindeki oluþturduðum 3 parametreli constructoru incele
+
+class CClass:public AClass,public BClass //Multipled Class
+
+CClass(int c1,int c2,int c3):AClass(c3),BClass(c2)
+	{
+		z = c1;
+		cout << "CClass constructor worked" << endl;
+	}
 
 
 --------------------------------------------------------

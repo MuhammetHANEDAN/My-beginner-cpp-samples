@@ -47,10 +47,10 @@ public:
 	{
 		return y;
 	}
-	void print2()
+	void print()
 	{
-		cout << "Y =" << y << endl;
-		
+		cout << "X = " << x << endl;
+		cout << "Y =" << y << endl;		
 	}
 	derivedClass(int mainX = 0, int mainY = 0):baseClass (mainX)
 	{

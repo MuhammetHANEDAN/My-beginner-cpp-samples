@@ -12,7 +12,9 @@ using namespace std;
 int main()
 {
 	
-	CClass cObject;
+	CClass c1(3,2,1);
+	c1.print();
+
 	
 	
 	
