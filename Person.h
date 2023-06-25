@@ -8,8 +8,22 @@ protected:
 public:
 	Person(string name = "", string surname = "")
 	{
+		while(cont)
 		personName = name;
 		personSurname = surname;
+	}
+	~Person()
+	{
+		cout << "Person destructed" << endl;
+	}
+	bool controlName(string name)
+	{
+		for (unsigned i = 0; i < name.length(); i++)
+		{
+			if (name.at(i) >= 'A' && name.at(i) <= 'Z' || name.at(i) >= 'a' && name.at(i) <= 'z')
+				return true;
+		}
+		return false;
 	}
 	string getPersonName()
 	{
@@ -50,8 +64,12 @@ public:
 	int getPassOrFail() { return passOrFail; };
 	void setPassOrFail(bool passFail) { passOrFail = passFail; };
 	void print() {
-		Person::print();
-		cout << "Student ID:" << studentID << endl;
-		cout << "Student Grade:" << studentGrade << endl;
+		Person print();
+		cout << "Student id: " << studentID << endl;
+		cout << "Student Grade: " << studentGrade << endl;
+		if (passOrFail == true)
+			cout << "-PASS-" << endl;
+		else
+			cout << "-FAIL-" << endl;
 	}
 };

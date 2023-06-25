@@ -12,7 +12,7 @@ using namespace std;
 int main()
 {
 	
-	CClass c1(3,2,1);
+	CClass c1(1,2,3);
 	c1.print();
 
 	

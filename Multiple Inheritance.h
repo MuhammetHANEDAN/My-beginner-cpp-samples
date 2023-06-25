@@ -27,7 +27,7 @@ public:
 class BClass
 {
 public:
-	int y, z;
+	int y;
 	BClass()
 	{
 		cout << "BClass constructor worked" << endl;
@@ -51,9 +51,9 @@ public:
 	{
 		cout << "CClass constructor worked" << endl;
 	}
-	CClass(int c1,int c2,int c3):BClass(c3),AClass(c2)
+	CClass(int c1,int c2,int c3):BClass(c2),AClass(c1)
 	{
-		z = c1;
+		z = c3;
 		cout << "CClass constructor worked" << endl;
 	}
 	~CClass()
