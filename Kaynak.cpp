@@ -5,15 +5,21 @@
 #include <string.h>
 #include "Inheritance.h"
 #include "Multiple Inheritance.h"
+#include "Person.h"
 
 using namespace std;
 
 
 int main()
 {
+	srand(time(NULL));
+	Student studentArray[] = { {"Muhammet","HANEDAN",53},{"Batuhan","KAYA",54},{"Ercan","Bayrakli",55} };
 	
-	CClass c1(1,2,3);
-	c1.print();
+	for (unsigned i = 0; i < 3; i++)
+	{
+		studentArray[i].setStudentGrade(rand() % 100 + 1);
+		studentArray[i].print();
+	}
 
 	
 	

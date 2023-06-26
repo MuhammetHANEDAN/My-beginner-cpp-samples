@@ -8,9 +8,20 @@ protected:
 public:
 	Person(string name = "", string surname = "")
 	{
-		while(cont)
+		while (!(controlName(name)))
+		{
+			cout << "Invalid name please enter again" << endl;
+			cin >> name;
+		}
 		personName = name;
+		while (!(controlName(surname)))
+		{
+			cout << "Invalid surname please enter again" << endl;
+			cin >> surname;
+		}
 		personSurname = surname;
+		//cout << "Person constuctor worked" << endl;
+		//cout << "Person name : " << personName << " Person surname : " << personSurname << endl;
 	}
 	~Person()
 	{
@@ -20,10 +31,10 @@ public:
 	{
 		for (unsigned i = 0; i < name.length(); i++)
 		{
-			if (name.at(i) >= 'A' && name.at(i) <= 'Z' || name.at(i) >= 'a' && name.at(i) <= 'z')
-				return true;
+			if (!(name.at(i) >= 'A' && name.at(i) <= 'Z' || name.at(i) >= 'a' && name.at(i) <= 'z'))
+				return false;
 		}
-		return false;
+		return true;
 	}
 	string getPersonName()
 	{
@@ -63,8 +74,16 @@ public:
 	void setStudentGrade(int grade) { studentGrade = grade; };
 	int getPassOrFail() { return passOrFail; };
 	void setPassOrFail(bool passFail) { passOrFail = passFail; };
+	bool PassOrFail(int studentGrade)
+	{
+		if (studentGrade >= 50)
+		{
+			return true;
+		}
+		return false;
+	}
 	void print() {
-		Person print();
+		Person::print();
 		cout << "Student id: " << studentID << endl;
 		cout << "Student Grade: " << studentGrade << endl;
 		if (passOrFail == true)
