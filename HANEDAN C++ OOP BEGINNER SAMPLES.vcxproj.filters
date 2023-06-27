@@ -19,6 +19,9 @@
     <Filter Include="Üst Bilgi Dosyaları\Inheritance">
       <UniqueIdentifier>{11db303e-9dbc-4c81-9aaa-a43296789001}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\Dynamic Memory">
+      <UniqueIdentifier>{2d57995e-4a2b-4524-bb04-abcecc1e2988}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kaynak.cpp">
@@ -63,6 +66,9 @@
     </ClInclude>
     <ClInclude Include="Person.h">
       <Filter>Üst Bilgi Dosyaları\Inheritance</Filter>
+    </ClInclude>
+    <ClInclude Include="dynamicMemory.h">
+      <Filter>Üst Bilgi Dosyaları\Dynamic Memory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

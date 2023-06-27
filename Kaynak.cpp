@@ -6,21 +6,19 @@
 #include "Inheritance.h"
 #include "Multiple Inheritance.h"
 #include "Person.h"
+#include "dynamicMemory.h"
 
 using namespace std;
 
 
 int main()
 {
-	srand(time(NULL));
-	Student studentArray[] = { {"Muhammet","HANEDAN",53},{"Batuhan","KAYA",54},{"Ercan","Bayrakli",55} };
+	//srand(time(NULL));
+	Example obj1(3, 3), obj2(4, 5);
+	obj1.addExample(obj2);
+	obj1.print();
 	
-	for (unsigned i = 0; i < 3; i++)
-	{
-		studentArray[i].setStudentGrade(rand() % 100 + 1);
-		studentArray[i].setPassOrFail(studentArray[i].PassOrFail(studentArray[i].getStudentGrade()));
-		studentArray[i].print();
-	}
+
 
 	
 	

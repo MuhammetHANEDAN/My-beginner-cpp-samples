@@ -1,69 +1,69 @@
-ERÝÞÝM BELÝRLEYÝCÝLER
+ï»¿ERÄ°ÅžÄ°M BELÄ°RLEYÄ°CÄ°LER
 
-private --> Sadece classýn içinden eriþilebilir.Dýþardan eriþilemez.(Default-varsayýlan) olarak bu kullanýlýr.
-Main kýsýmdan eriþilemez.
+private --> Sadece classÄ±n iÃ§inden eriÅŸilebilir.DÄ±ÅŸardan eriÅŸilemez.(Default-varsayÄ±lan) olarak bu kullanÄ±lÄ±r.
+Main kÄ±sÄ±mdan eriÅŸilemez.
 
-protected --> Sadece class içerisinde ve miras alan classlar içerisinde eriþilebilir.Main kýsýmdan eriþilemez.
+protected --> Sadece class iÃ§erisinde ve miras alan classlar iÃ§erisinde eriÅŸilebilir.Main kÄ±sÄ±mdan eriÅŸilemez.
 
-public --> Her yerden eriþilebilir.
+public --> Her yerden eriÅŸilebilir.
 
 KAVRAMLAR
 
 -Encapsulation
 
-- Polymorphism (Çok Biçimlilik)
-Bir nesnenin farklý durumlar karþýsýnda farklý davranýþlar ve sonuçlar üretmesidir.Reelden örnek vermek
-gerekirse biz anne ve babamýz için bir çocuðuz.Üniversitede hocalar karþýsýnda bir öðrenciyiz.Ýþ yerin
-de patron için bir çalýþanýz gibi.
+- Polymorphism (Ã‡ok BiÃ§imlilik)
+Bir nesnenin farklÄ± durumlar karÅŸÄ±sÄ±nda farklÄ± davranÄ±ÅŸlar ve sonuÃ§lar Ã¼retmesidir.Reelden Ã¶rnek vermek
+gerekirse biz anne ve babamÄ±z iÃ§in bir Ã§ocuÄŸuz.Ãœniversitede hocalar karÅŸÄ±sÄ±nda bir Ã¶ÄŸrenciyiz.Ä°ÅŸ yerin
+de patron iÃ§in bir Ã§alÄ±ÅŸanÄ±z gibi.
 compile time - function overloading & operator overloading
 run time - function overriding
 
-- Function Overriding (Fonksiyonlarýn Çiðnenmesi)
-Diyelimki B A dan miras alsýn ve A da void print() fonksiyonu var bunu B nin içinde ayný isimle
-void print() ile tanýmladýðýmýz zaman artýk print fonksiyonunu override etmiþ ezmiþ olduk artýk B sýný
-fýnda kullanýlan print fonksiyonu override etmiþ olduðumuz fonksiyondur.
-* Fonksiyon ismi ve parametresi ayný olmalýdýr Function override diyebilmek için
+- Function Overriding (FonksiyonlarÄ±n Ã‡iÄŸnenmesi)
+Diyelimki B A dan miras alsÄ±n ve A da void print() fonksiyonu var bunu B nin iÃ§inde aynÄ± isimle
+void print() ile tanÄ±mladÄ±ÄŸÄ±mÄ±z zaman artÄ±k print fonksiyonunu override etmiÅŸ ezmiÅŸ olduk artÄ±k B sÄ±nÄ±
+fÄ±nda kullanÄ±lan print fonksiyonu override etmiÅŸ olduÄŸumuz fonksiyondur.
+* Fonksiyon ismi ve parametresi aynÄ± olmalÄ±dÄ±r Function override diyebilmek iÃ§in
 
 CONSTRUCTORS
 
-Constructorlar 2 çeþittir parametre almayan(default constructor) ve parametre alan costructor.
-Biz bir constructor atamasý yapmasakda c++ varsayýlan olarak bir constructor atamasý yapmaktadýr biz görmesekte.
-Constructor demek mainde bir nesne oluþturulunca o nesnenin ilk olarak
-mainde olusturulduðunda çalýþan yapýdýr.Eriþim için publicte
-tanýmladýk.Her zaman classýn ismiyle tanýmlanýrlar örnegin public altýnda "Student();"
-Student Student[5]; //þeklinde array ile çalýþtýrýlabilirler.
+Constructorlar 2 Ã§eÅŸittir parametre almayan(default constructor) ve parametre alan costructor.
+Biz bir constructor atamasÄ± yapmasakda c++ varsayÄ±lan olarak bir constructor atamasÄ± yapmaktadÄ±r biz gÃ¶rmesekte.
+Constructor demek mainde bir nesne oluÅŸturulunca o nesnenin ilk olarak
+mainde olusturulduÄŸunda Ã§alÄ±ÅŸan yapÄ±dÄ±r.EriÅŸim iÃ§in publicte
+tanÄ±mladÄ±k.Her zaman classÄ±n ismiyle tanÄ±mlanÄ±rlar Ã¶rnegin public altÄ±nda "Student();"
+Student Student[5]; //ÅŸeklinde array ile Ã§alÄ±ÅŸtÄ±rÄ±labilirler.
 
-PARAMETRELÝ CONSTRUCTOR
+PARAMETRELÄ° CONSTRUCTOR
 
-Diyelimki classta 2 adet cons tanýmladýn birisi parametre almayan öbürü parametre alan cons.Mainde nesneyi
-parametreli olarak çaðýrýrsan otomatikmen parametreli olan constructor ý alýp çalýþtýracaktýr.Nesneye parametre
-vermezsende gidip parametresiz constructoru çalýþtýracaktýr.
-örnek  mainde  Student Student1(x,x,x); --> burda parametreli constructor çalýþtýrýr
-			   Student Student1; --> burada parametresiz constructor çalýþýr
+Diyelimki classta 2 adet cons tanÄ±mladÄ±n birisi parametre almayan Ã¶bÃ¼rÃ¼ parametre alan cons.Mainde nesneyi
+parametreli olarak Ã§aÄŸÄ±rÄ±rsan otomatikmen parametreli olan constructor Ä± alÄ±p Ã§alÄ±ÅŸtÄ±racaktÄ±r.Nesneye parametre
+vermezsende gidip parametresiz constructoru Ã§alÄ±ÅŸtÄ±racaktÄ±r.
+Ã¶rnek  mainde  Student Student1(x,x,x); --> burda parametreli constructor Ã§alÄ±ÅŸtÄ±rÄ±r
+			   Student Student1; --> burada parametresiz constructor Ã§alÄ±ÅŸÄ±r
 
-Diyelimki mainde Student Student1(x); Böyle bir parametreli constructor çalýþtýrmak istedin çalýþmasý için
-1 parametre içeren constructorun sýnýfta tanýmlý olmasý gerekiyor yoksa çalýþmaz.
+Diyelimki mainde Student Student1(x); BÃ¶yle bir parametreli constructor Ã§alÄ±ÅŸtÄ±rmak istedin Ã§alÄ±ÅŸmasÄ± iÃ§in
+1 parametre iÃ§eren constructorun sÄ±nÄ±fta tanÄ±mlÄ± olmasÄ± gerekiyor yoksa Ã§alÄ±ÅŸmaz.
 
 
 
 DESTRUCTORLAR
 
-Nesne kaybolunca çalýþýrlar.Classta sadece birer tane tanýmlanabilir.
-~Student(); diye tanýmlanýrlar classta.Parametre almazlar.
-Diyelimki mainde þöyle biþi yazdýk
+Nesne kaybolunca Ã§alÄ±ÅŸÄ±rlar.Classta sadece birer tane tanÄ±mlanabilir.
+~Student(); diye tanÄ±mlanÄ±rlar classta.Parametre almazlar.
+Diyelimki mainde ÅŸÃ¶yle biÅŸi yazdÄ±k
 	if(true)
 	{
 		Student Student5;
 	{
-		Burada lokal bir nesne olmuþ oluyor blop bittiði an destructor çalýþýr.Yani destructor nesne yok
-		olduðu an çalýþýr.
+		Burada lokal bir nesne olmuÅŸ oluyor blop bittiÄŸi an destructor Ã§alÄ±ÅŸÄ±r.Yani destructor nesne yok
+		olduÄŸu an Ã§alÄ±ÅŸÄ±r.
 
 
 COPY CONSTRUCTOR
 
-Student(const Student& oth); //copy constructor Class içinde boyle tanýmlanýrlar.Bir nesne oluþtururken
-oluþturulmuþ bir nesnenin deðerlerini kopyalayarak yeni bir nesne oluþturmamýza yararlar.
-mainde örnek
+Student(const Student& oth); //copy constructor Class iÃ§inde boyle tanÄ±mlanÄ±rlar.Bir nesne oluÅŸtururken
+oluÅŸturulmuÅŸ bir nesnenin deÄŸerlerini kopyalayarak yeni bir nesne oluÅŸturmamÄ±za yararlar.
+mainde Ã¶rnek
 	Student Student1("Muhammet");
 	Student Student2(Student1);
 	Student2.displayInformation(); // Olusturdugumuz Student1 nesnesininin bilgilerini kopyalayarak Student2
@@ -71,18 +71,18 @@ mainde örnek
 
 INHERITANCE (Miras)
 
-Var olan sýnýftan baþka sýnýflar türetmeyi ve bu türetme aþamasýnda bazý özellik ve fonksiyonlarý aktar
-ma iþlemidir.Mesela biz dünyaya gelirken anne ve babadan özellikler aldýk gibi düþünülebilir.Birden faz
-la sýnýftanda miras alýnabilir yani :D
-Sýnýflar arasýnda alt üst iliþkisi saðlar
-Mesela hayvan sýnýfý ürettik oraya ortak özellikler yazdýk sonra o sýnýftan miras alarak kedi sýnýfýný
-ný ürettik oraya kediye özel olanlarý yazdýk, hayvan sýnýfýndan miras alarak köpek ürettik gibi.
+Var olan sÄ±nÄ±ftan baÅŸka sÄ±nÄ±flar tÃ¼retmeyi ve bu tÃ¼retme aÅŸamasÄ±nda bazÄ± Ã¶zellik ve fonksiyonlarÄ± aktar
+ma iÅŸlemidir.Mesela biz dÃ¼nyaya gelirken anne ve babadan Ã¶zellikler aldÄ±k gibi dÃ¼ÅŸÃ¼nÃ¼lebilir.Birden faz
+la sÄ±nÄ±ftanda miras alÄ±nabilir yani :D
+SÄ±nÄ±flar arasÄ±nda alt Ã¼st iliÅŸkisi saÄŸlar
+Mesela hayvan sÄ±nÄ±fÄ± Ã¼rettik oraya ortak Ã¶zellikler yazdÄ±k sonra o sÄ±nÄ±ftan miras alarak kedi sÄ±nÄ±fÄ±nÄ±
+nÄ± Ã¼rettik oraya kediye Ã¶zel olanlarÄ± yazdÄ±k, hayvan sÄ±nÄ±fÄ±ndan miras alarak kÃ¶pek Ã¼rettik gibi.
 * Priavate olanlar miras verilemezler
-* Üst sýnýfýn Constructor ve destructor miras alýnamazlar bir þekilde kullanýlabilirler.
-* Üst sýnýfýn friend fonksiyonlarý miras alýnamaz
-* Üst sýnýftaki eþitlikleri miras alamayýz
+* Ãœst sÄ±nÄ±fÄ±n Constructor ve destructor miras alÄ±namazlar bir ÅŸekilde kullanÄ±labilirler.
+* Ãœst sÄ±nÄ±fÄ±n friend fonksiyonlarÄ± miras alÄ±namaz
+* Ãœst sÄ±nÄ±ftaki eÅŸitlikleri miras alamayÄ±z
 
-- Syntax yapýsý
+- Syntax yapÄ±sÄ±
 
 class baseClass 
 {
@@ -111,28 +111,28 @@ class derivedClass :public baseClass
 int main()
 {
 
-	derivedClass obj1; /* Base classtan miras aldýgýmýz için onun fonksiyonlarýne eriþebiþiyoruz
-	x deðiþkeninide aldýk ama protected oldugu için mainden eriþememiz normal yani obj1.x yapamýyoruz*/
+	derivedClass obj1; /* Base classtan miras aldÄ±gÄ±mÄ±z iÃ§in onun fonksiyonlarÄ±ne eriÅŸebiÅŸiyoruz
+	x deÄŸiÅŸkeninide aldÄ±k ama protected oldugu iÃ§in mainden eriÅŸememiz normal yani obj1.x yapamÄ±yoruz*/
 	obj1.setXValue(5);
 	obj1.print(); // X=5 degerini verdi
 
 - Inheritance acces levels
 
-class derivedClass :public baseClass > acces level burda public olarak tanýmladýk
-Eðer boþ býraksaydýk priavate olarak default tanýmlanacaktý
-Priavate olursa miras alýnan classtaki protected ve public olan özellik ve fonksiyonlar miras alan clasý
-mýzýn içinde priavate olarak tanýmlanýrlar.
-Protected olursa miras alýnan classtaki public ve protectedlar protected olarak alýnýrlar.
-Public olursa protectedlar protected olarak alýnýr publicler public olarak alýnýrlar.
+class derivedClass :public baseClass > acces level burda public olarak tanÄ±mladÄ±k
+EÄŸer boÅŸ bÄ±raksaydÄ±k priavate olarak default tanÄ±mlanacaktÄ±
+Priavate olursa miras alÄ±nan classtaki protected ve public olan Ã¶zellik ve fonksiyonlar miras alan clasÄ±
+mÄ±zÄ±n iÃ§inde priavate olarak tanÄ±mlanÄ±rlar.
+Protected olursa miras alÄ±nan classtaki public ve protectedlar protected olarak alÄ±nÄ±rlar.
+Public olursa protectedlar protected olarak alÄ±nÄ±r publicler public olarak alÄ±nÄ±rlar.
 
-- Miras alma iþleminde constructor destructor ve c.const. mantýgý
+- Miras alma iÅŸleminde constructor destructor ve c.const. mantÄ±gÄ±
 
 int main()
 {
 	baseClass base1;
 	derivedClass obj1; 
 
-çýktýmýz þöyle olucaktýr
+Ã§Ä±ktÄ±mÄ±z ÅŸÃ¶yle olucaktÄ±r
 baseClass Constructor worked
 baseClass Constructor worked
 derivedClass Constructor worked
@@ -140,11 +140,11 @@ derivedClass Destructor worked
 baseClass Destructor worked
 baseClass Destructor worked
 
-Önce baseclass ýn constu , sonrasýnda derived classýn miras aldýðý baseClassýn içindeki constructor
-sonra derivedin kendi constu çalýþýr. Destructor da durum tam tersidir önce obj1 in desti sonra obj1
-içinde bulunan baseClass desti sonrada ilk baþta olan base1 in desti çalýþmýþtýr.
+Ã–nce baseclass Ä±n constu , sonrasÄ±nda derived classÄ±n miras aldÄ±ÄŸÄ± baseClassÄ±n iÃ§indeki constructor
+sonra derivedin kendi constu Ã§alÄ±ÅŸÄ±r. Destructor da durum tam tersidir Ã¶nce obj1 in desti sonra obj1
+iÃ§inde bulunan baseClass desti sonrada ilk baÅŸta olan base1 in desti Ã§alÄ±ÅŸmÄ±ÅŸtÄ±r.
 
-Copy constructor mantýgý ise söyle
+Copy constructor mantÄ±gÄ± ise sÃ¶yle
 
 int main()
 {
@@ -152,7 +152,7 @@ int main()
 	derivedClass obj1(3, 5);
 	derivedClass obj2(obj1);
 
-çýktý þu þekildedir
+Ã§Ä±ktÄ± ÅŸu ÅŸekildedir
 
 baseClass Constructor worked
 derivedClass Constructor worked
@@ -163,30 +163,30 @@ baseClass Destructor worked
 derivedClass Destructor worked
 baseClass Destructor worked
 
-önce obj1 baseClass const sonra obj1 const sonra obj2 baseClass const sonra copy constructor çalýþtý
-sonra obj2 için derived dest sonra baseDest sonrasýnda obj1 için derived dest ve baseDest çalýþmýþtýr.
+Ã¶nce obj1 baseClass const sonra obj1 const sonra obj2 baseClass const sonra copy constructor Ã§alÄ±ÅŸtÄ±
+sonra obj2 iÃ§in derived dest sonra baseDest sonrasÄ±nda obj1 iÃ§in derived dest ve baseDest Ã§alÄ±ÅŸmÄ±ÅŸtÄ±r.
 
-* derivedClass içinde constructorda farklý bir gösterim yapýsý
+* derivedClass iÃ§inde constructorda farklÄ± bir gÃ¶sterim yapÄ±sÄ±
 
 derivedClass(int mainX = 0, int mainY = 0):baseClass (mainX) -> burada
 	{
-		// x=mainX yok onu :baseClass (mainX) yaparak saðlamýþ olduk
+		// x=mainX yok onu :baseClass (mainX) yaparak saÄŸlamÄ±ÅŸ olduk
 		y = mainY; 
 		cout << "derivedClass Constructor worked" << endl;
 	}
 
-- Multiple Inheritance (Birden fazla sýnýftan miras alma )
+- Multiple Inheritance (Birden fazla sÄ±nÄ±ftan miras alma )
 
-Syntax yapýsý
+Syntax yapÄ±sÄ±
 
-A ve B sýnýfý oluþturduk ve A ve B den public level miras alan bir C sýnýfý oluþturuldu aþaðýda
+A ve B sÄ±nÄ±fÄ± oluÅŸturduk ve A ve B den public level miras alan bir C sÄ±nÄ±fÄ± oluÅŸturuldu aÅŸaÄŸÄ±da
 
 class CClass:public AClass,public BClass
 {
 
 }
  
- Mainde bir nesne oluþturup çalýþtýrýrsak
+ Mainde bir nesne oluÅŸturup Ã§alÄ±ÅŸtÄ±rÄ±rsak
 
  int main()
 {
@@ -200,10 +200,10 @@ CClass destructor worked
 BClass destructor worked
 AClass destructor worked       
 
-çýktý bu þekilde olur.
+Ã§Ä±ktÄ± bu ÅŸekilde olur.
 
-* A B ve C classý oluþturdk C, A ve B den miras aldý A da x B de y deðiþkeni vardý public olarak C public
-olarak miras aldý.Þimdi C sýnýfý içerisindeki oluþturduðum 3 parametreli constructoru incele
+* A B ve C classÄ± oluÅŸturdk C, A ve B den miras aldÄ± A da x B de y deÄŸiÅŸkeni vardÄ± public olarak C public
+olarak miras aldÄ±.Åžimdi C sÄ±nÄ±fÄ± iÃ§erisindeki oluÅŸturduÄŸum 3 parametreli constructoru incele
 
 class CClass:public AClass,public BClass //Multipled Class
 
@@ -213,12 +213,145 @@ CClass(int c1,int c2,int c3):AClass(c3),BClass(c2)
 		cout << "CClass constructor worked" << endl;
 	}
 
+DYNAMIC MEMORY
+
+ï»¿#include "dynamicMemory.h"
+
+int main()
+{
+    Example exObj, * exPtr;//one of them is object and second is pointer.Burada exobj Ã¼retirlirken ve
+	yok edilirken const ve destructor Ã§alÄ±ÅŸÄ±r ama pointer iÃ§in geÃ§erli deÄŸildir.
+    exPtr = &exObj;//exPtr points to exObj.
+                    //exPtr store the address  of exObj.
+    exObj.x = 5;
+    exObj.y = 15;
+    exObj.print();
+
+    (*exPtr).x = 12;// ( ) used because dot operator has higher precedence than dereferencing operator 
+    exPtr->y = 13;//use member access operator arrow (->)
+    exPtr->print();
+
+    //to create dynamic variables using pointer, we can use new and delete operators.
+    //we can allocate two types;single variable or array of variables.
+    //for the integer type.
+    int *ptr = new int;//creates a variable during program execution somewhere in memory, and stores address of allocated memory in ptr.
+    Example* ptrEx = new Example;
+    ptrEx->x = 2;
+    ptrEx->y = 10;
+    ptrEx->print();
+    delete ptrEx;
+
+
+    //Single-Dim.
+    int* ptrArray = new int[5];
+    Example* ptrExArray = new Example[5];
+    for (int i = 0; i < 5; i++) {
+        ptrExArray[i].x = i;
+        ptrExArray[i].y = i * i;
+        ptrExArray[i].print();
+    }
+    delete[] ptrExArray;
+
+    
+    //Multi-Dim.
+    int** Array2D = new int* [5];
+    Example** ExampleArray2D = new Example* [5];
+
+    for (int i = 0; i < 5; i++) {
+        ExampleArray2D[i] = new Example[5];
+    }
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            ExampleArray2D[i][j].x = i;
+            ExampleArray2D[i][j].y = j;
+            ExampleArray2D[i][j].print();
+        }
+    }
+    
+    for (int i = 0; i < 5; i++) {
+        delete[] ExampleArray2D[i];
+    }
+    delete[] ExampleArray2D;
+}
+
+* New keyworduyle yer ayÄ±rtÄ±rsan delete ile temizlemen gerekir.
+
+Example* exptr = new Example;
+	exptr->x = 5;
+	exptr->y = 3;
+	exptr->print();
+	delete exptr;
+
+DÄ°NAMÄ°K TEK BOYUTLU DÄ°ZÄ°
+
+Example* exArrayPtr = new Example[5];
+	for (unsigned i = 0; i < 5; i++)
+	{
+		exArrayPtr->x = i;
+		exArrayPtr->y = i * i;
+		exArrayPtr->print();
+	}
+	delete[] exArrayPtr;
+
+
+DÄ°NAMÄ°K 2 BOYUTLU DÄ°ZÄ°
+
+int** ptr2dArray = new  int*[5]; // Burada pointer to pointer yani pointerlarÄ± tutan bir pointer oluÅŸ
+turduk yani bu dizi pointer dizilerini tutmaktadÄ±r 2. boyutlu oluyor.
+	for (int i = 0; i < 5; i++)
+	{
+		ptr2dArray[i] = new int[5]; //Burada pointerÄ±mÄ±zÄ±n tuttuÄŸu pointerlarada bellek atamasÄ± yapmÄ±ÅŸ
+		olduk artÄ±k **ptr2dArrayda bulunan pointerlar 5 int lik yer ayrÄ±lmÄ±ÅŸ bulunmakta bellekte
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			ptr2dArray[i][j] = i + j;
+		}
+	}
+	for (int i = 0; i < 5; i++) // Ã§Ä±ktÄ± iÃ§in 
+	{
+		for (int j = 0; j < 5; j++)
+		{		
+			cout << ptr2dArray[i][j] << " ";
+		}
+		cout << "" << endl;
+	}
+	delete[] ptr2dArray;
+
+*Class - object Ã¶rneÄŸi
+
+Example** ex2dArray = new  Example * [5];
+	for (int i = 0; i < 5; i++)
+	{
+		ex2dArray[i] = new Example[5];
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			ex2dArray[i][j].x = i;
+			ex2dArray[i][j].y = j;
+			ex2dArray[i][j].print();
+		}
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		delete[] ex2dArray[i]; // Ã¶nce ** in iÃ§indeki * leri temizledik
+	}
+	delete[] ex2dArray;  // en son ** i temizledik bellekten
+
+
+THIS POINTER KAVRAMI
+
+Her nesne oluÅŸunca onun bir this pointerÄ± oluÅŸturulur.
 
 --------------------------------------------------------
 
 NOTLAR
 
-Ýf else kýsa kullanýmý ornegi
+Ä°f else kÄ±sa kullanÄ±mÄ± ornegi
 int a = 7;
 a > 6 ? cout << "t" : cout << "f";
 mainde bunu yaparsak t yazar.
@@ -228,71 +361,71 @@ class
 complexNumber addComplex(const complexNumber& oth);
 complexNumber substractComplex(const complexNumber& oth);
 
-Fonk tanýmlamalarý ornek
+Fonk tanÄ±mlamalarÄ± ornek
 complexNumber complexNumber::addComplex(const complexNumber& oth)
 {
 	complexNumber result;
 	real = real + oth.real;
 	imag = imag + oth.imag;
 	return result;
-}***** eðer fonksiyonun dönüþ tipi senin sýnýfýnla ayný ise orda bir copy constructor çalýþýr ->return edince
+}***** eÄŸer fonksiyonun dÃ¶nÃ¼ÅŸ tipi senin sÄ±nÄ±fÄ±nla aynÄ± ise orda bir copy constructor Ã§alÄ±ÅŸÄ±r ->return edince
 
 
 
 
 
-ÖNEMLÝ NOTLAR
+Ã–NEMLÄ° NOTLAR
 
-POINTER MANTIGINI ÝYÝ ANLAMAK LAZIM C++ == POÝNTER GÝBÝ :D
+POINTER MANTIGINI Ä°YÄ° ANLAMAK LAZIM C++ == POÄ°NTER GÄ°BÄ° :D
 
-Aþaðýda pointerlarý daha iyi kavramak için bir örnek yaptým
+AÅŸaÄŸÄ±da pointerlarÄ± daha iyi kavramak iÃ§in bir Ã¶rnek yaptÄ±m
 
-	int* data = new int[5];     //data pointerýmýza bellekte 5 int lik yer ayýrdýk
-	for (int i = 0; i < 5; i++) //data pointerýmýza deðerleri verdik
+	int* data = new int[5];     //data pointerÄ±mÄ±za bellekte 5 int lik yer ayÄ±rdÄ±k
+	for (int i = 0; i < 5; i++) //data pointerÄ±mÄ±za deÄŸerleri verdik
 	{
 		data[i] = i;
 	}
-	int* temp_data = new int[10];//temp_data diye pointer oluþturduk 10 int lik
-	for (int i = 0; i < 5; i++)  //temp_data ya data daki deðerleri verdik  þu an bu deðerler ramde farklý yerlerde tutulmakta
+	int* temp_data = new int[10];//temp_data diye pointer oluÅŸturduk 10 int lik
+	for (int i = 0; i < 5; i++)  //temp_data ya data daki deÄŸerleri verdik  ÅŸu an bu deÄŸerler ramde farklÄ± yerlerde tutulmakta
 	{
 		temp_data[i] = data[i];
 	}
 	cout << "&temp_data[0] = " << &temp_data[0] << endl; //adresi verir
 	cout << "&data[0] = " << &data[0] << endl;           //adresi verir
 	cout << "temp_data[1] = " << temp_data[1] << endl;      //1 degerini verir
-	cout << "temp_data[5] = " << temp_data[5] << endl;     //karmaþýk bi deðer verdi çünkü 5.indexi girmedik
+	cout << "temp_data[5] = " << temp_data[5] << endl;     //karmaÅŸÄ±k bi deÄŸer verdi Ã§Ã¼nkÃ¼ 5.indexi girmedik
 	temp_data[5] = 22; //5. indexi girdik
 	cout << "delete data [] activated" << endl;
-	delete[] data;//data pointerýnýn ramde tuttugu adresi rame iade ettik attýk data pointeri bir yer göstermiyor
+	delete[] data;//data pointerÄ±nÄ±n ramde tuttugu adresi rame iade ettik attÄ±k data pointeri bir yer gÃ¶stermiyor
 	cout << "data = temp_data command has been given" << endl;
-	data = temp_data;// data pointerýmýz temp_data pointerinin gösterdiði yeri gösteriyor artýk
-	cout << "&data[0] = " << &data[0] << endl; // data=temp_data yaptýgýmýz için ilk satýrdaki adresi verecektir
+	data = temp_data;// data pointerÄ±mÄ±z temp_data pointerinin gÃ¶sterdiÄŸi yeri gÃ¶steriyor artÄ±k
+	cout << "&data[0] = " << &data[0] << endl; // data=temp_data yaptÄ±gÄ±mÄ±z iÃ§in ilk satÄ±rdaki adresi verecektir
 	cout << "data[0] = " << data[0] << endl; // 0
 	cout << "temp_data[0] = " << temp_data[0] << endl; // 0
 	cout << "data[1] = " << data[1] << endl; //1
 	cout << "temp_data[1] = " << temp_data[1] << endl; //1
-	cout << "temp_data[5] = " << temp_data[5] << endl; //22 veriyor artýk çünkü temp_data[5] = 22 yapmýþtk
+	cout << "temp_data[5] = " << temp_data[5] << endl; //22 veriyor artÄ±k Ã§Ã¼nkÃ¼ temp_data[5] = 22 yapmÄ±ÅŸtk
 	cout << "data[4] = " << data[4] << endl; //4
 	cout << "data[5] = " << data[5] << endl; //22
 
 	------------------
 
-	Burada anlatmak istediðim þey þu, 2. fonksiyona bakarsan her þey çok daha hýzlý þekilde yapýlýr.1.fonksiyonda
-kopyalama iþlemi yapýlacak atama iþlemi yapýlacak return iþlemi yapýlacak sonra bide mainde bunu deðiþkene vermek
-için bir atama iþlemi daha yapacaksýn ve düþünki bunu milisaniyelerde yapman lazým uçaða giden füzeye yön veriyorsun
-diyelim hýzlýca yapmak için direk 2. fonksiyon gibi yapýlar kullanmak gerekir.2. fonksiyonda kopyalama return atama
-iþlemleri yapýlmaz çünkü direk o adresteki deðerde deðiþimler hýzlýca yapýlýr.
+	Burada anlatmak istediÄŸim ÅŸey ÅŸu, 2. fonksiyona bakarsan her ÅŸey Ã§ok daha hÄ±zlÄ± ÅŸekilde yapÄ±lÄ±r.1.fonksiyonda
+kopyalama iÅŸlemi yapÄ±lacak atama iÅŸlemi yapÄ±lacak return iÅŸlemi yapÄ±lacak sonra bide mainde bunu deÄŸiÅŸkene vermek
+iÃ§in bir atama iÅŸlemi daha yapacaksÄ±n ve dÃ¼ÅŸÃ¼nki bunu milisaniyelerde yapman lazÄ±m uÃ§aÄŸa giden fÃ¼zeye yÃ¶n veriyorsun
+diyelim hÄ±zlÄ±ca yapmak iÃ§in direk 2. fonksiyon gibi yapÄ±lar kullanmak gerekir.2. fonksiyonda kopyalama return atama
+iÅŸlemleri yapÄ±lmaz Ã§Ã¼nkÃ¼ direk o adresteki deÄŸerde deÄŸiÅŸimler hÄ±zlÄ±ca yapÄ±lÄ±r.
 
 int yonHesapla(int x)
 {
-	//hesaplar yapýldý
+	//hesaplar yapÄ±ldÄ±
 	x = 22;
 		return x_;
 }
 
 void yonHesapla2(int* p)
 {
-	//hesaplar yapýldý
+	//hesaplar yapÄ±ldÄ±
 	*p = 30;
 }
 
@@ -306,8 +439,8 @@ int main()
 
 	-----------
 	
-	ref ornegi aþaðýda
-	void fonk(int &x) //tek bir deger için reference örnegimiz direk deðiþkenin adresini yolladýk
+	ref ornegi aÅŸaÄŸÄ±da
+	void fonk(int &x) //tek bir deger iÃ§in reference Ã¶rnegimiz direk deÄŸiÅŸkenin adresini yolladÄ±k
 {
 	x = 2 * x_;
 }
@@ -318,13 +451,13 @@ int main()
 
 EKSIKLER
 
-* SOLID PRINCIPLES öðren
+* SOLID PRINCIPLES Ã¶ÄŸren
 
-* Classta dinamik dizi oluþtur sonra bir nesne ile bir nesneyi toplayýp yeni bir nesne oluþmasý fonksi
+* Classta dinamik dizi oluÅŸtur sonra bir nesne ile bir nesneyi toplayÄ±p yeni bir nesne oluÅŸmasÄ± fonksi
 yonunu yaz 
 
-* 2 boyutlu dizileri 2 boyutlu pointerlar ile temsil etmek ve new delete komutunu onlara etkin bir þekilde
-kullanmak aþaðýda onunla ilgili örnek yapýyoruz devam ettirirsin
+* 2 boyutlu dizileri 2 boyutlu pointerlar ile temsil etmek ve new delete komutunu onlara etkin bir ÅŸekilde
+kullanmak aÅŸaÄŸÄ±da onunla ilgili Ã¶rnek yapÄ±yoruz devam ettirirsin
 int a[3][3];
 	for (int i = 0; i < 3; i++)
 	{	
@@ -346,7 +479,9 @@ int a[3][3];
 	int (*p)[3] = a;
 	cout << p + 1;
 
-	* String sýnýfýnýn fonksiyonlarý ile birlikte etkin kullanýmý - Dosya iþlemleri 
+	* String sÄ±nÄ±fÄ±nÄ±n fonksiyonlarÄ± ile birlikte etkin kullanÄ±mÄ± - Dosya iÅŸlemleri 
+
+	* OgÃ¼n birinci 49-52
 
 ------------------------------------
 
