@@ -22,6 +22,9 @@
     <Filter Include="Üst Bilgi Dosyaları\Dynamic Memory">
       <UniqueIdentifier>{2d57995e-4a2b-4524-bb04-abcecc1e2988}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\Advanced">
+      <UniqueIdentifier>{f0629257-dc1f-4464-b8c6-0216a05d622a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kaynak.cpp">
@@ -69,6 +72,9 @@
     </ClInclude>
     <ClInclude Include="dynamicMemory.h">
       <Filter>Üst Bilgi Dosyaları\Dynamic Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="upcastingDowncasting.h">
+      <Filter>Üst Bilgi Dosyaları\Advanced</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

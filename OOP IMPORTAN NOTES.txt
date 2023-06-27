@@ -347,6 +347,140 @@ THIS POINTER KAVRAMI
 
 Her nesne oluşunca onun bir this pointerı oluşturulur.
 
+Example classından bir örnek 
+
+class Example 
+{
+public:
+	Example(int mainX,int mainY) 
+	{
+		x = mainX;
+		y = mainY;
+		cout << "Constructor work." << endl;
+	}
+	~Example() 
+	{
+		cout << "Destructor work." << endl;
+	}
+	int x, y;
+	void print();
+	Example addExample(Example& oth)
+	{
+		x = x+oth.x;
+		y = y+oth.y;
+		return *this;
+	}
+};
+main()
+Example obj1(3, 3), obj2(4, 5);
+	obj1.addExample(obj2);
+	obj1.print();
+
+burda direk obj1 döndürülüyor this sayesinde
+
+UPCASTING KAVRAMI
+
+Upcasting kavramı base sınıfından miras alan bir sınıftan oluşturulan nesneyi
+base sınıfının pointerı ile yönetme işlemidir.
+
+Upcasting işlemi syntax yapısı mainde aşağıdaki örnekte
+
+Employee* emp1;
+Manager obj1("Muhammet", "HANEDAN", 30000, "GameDev");
+emp1 = &obj1; // upcasting uygulandı
+emp1->displayInformation();
+
+Çıktı
+	Name:Muhammet
+	Surname:HANEDAN
+	Salary:30000
+
+Dikkat edilmesi gereken şu upcasting işleminde emp1 pointerından sadece base classta olan yani
+Employee clasıın üyelerine erişilebilir miras alan nesnede olup base classta olmayan üyelere erişilemez
+*emp1 pointerından.
+
+DOWNCASTING KAVRAMI
+
+Downcasting kavramı base classın pointerını miras alan sınıfın pointerı haline dönüştürme işlemidir.
+
+	Employee* emp1;
+	Manager obj1("Muhammet", "HANEDAN", 30000, "GameDev");
+	emp1 = &obj1;
+	Manager* mng2;
+	mng2 = (Manager*)emp1; // Burda uygulamış olduk
+	mng2->displayInformation(); // Artık Manager sınıfının tüm üyelerine erişebiliriz.
+
+Çıktı şu şekilde olur 
+	Name:Muhammet
+	Surname:HANEDAN
+	Salary:30000
+	Department:GameDev
+
+VIRTUAL FUNCTION (SANAL FONKSİYON) KAVRAMI
+
+Derleme aşamasında değil çalışma aşamasında karar verilen bir işlemdir.Base sınıfta yani miras veren
+sınıfta virtual olması istenen fonksyionun önüne virtual keywordu eklenerek yapılır.Sadece miras veren
+sınıfta yapılması yeterlidir.Yani dil classta fonksiyonda virtual keywordunu görünce bu fonksiyon mainde
+hangi objeden çağırılırsa o objenin sınıfındaki fonksiyon çağırılır.B A dan miras alsın 2 sindede print
+fonksiyonu olsun A da virtual print olarak tanımlı mainde B den oluşturulan nesneden çağırılırsa B deki
+print fonksiyonu çalıştırılır.
+
+Örnek olarak
+
+class Employee 
+{
+public:
+	string empName, empSurname;
+	double empSalary;
+	Employee(string name, string surname, double salary);
+	virtual void displayInformation() // Buraya dikkat 
+	{
+		cout << "Name:" << empName << endl;
+		cout << "Surname:" << empSurname << endl;
+		cout << "Salary:" << empSalary << endl;
+	}
+};
+Employee::Employee(string name, string surname, double salary) 
+{
+	empName = name;
+	empSurname = surname;
+	empSalary = salary;
+}
+
+
+class Manager :public Employee 
+{
+public:
+	string mngDepartment;
+	Manager(string name, string surname, double salary, string department) :Employee(name, surname, salary) 
+	{
+		mngDepartment = department;
+	};
+	void displayInformation() 
+	{
+		Employee::displayInformation();
+		cout << "Department:" << mngDepartment << endl;
+	}
+	void increaseSalary() 
+	{
+		empSalary += 200;
+	}
+};
+
+Mainde
+	Employee* emp1;
+	Manager obj1("Muhammet", "HANEDAN", 30000, "GameDev");
+	emp1 = &obj1;
+	emp1->displayInformation();
+	Eğer virtual keywordu koymasaydık çıktıda manager sınıfına software değişkenine ait GameDev çıktıda
+	olmayacaktı çıktı şu şekildedir
+
+	Name:Muhammet
+	Surname:HANEDAN
+	Salary:30000
+	Department:GameDev
+
+
 --------------------------------------------------------
 
 NOTLAR
