@@ -18,6 +18,7 @@ int main()
 	for (unsigned i = 0; i < 3; i++)
 	{
 		studentArray[i].setStudentGrade(rand() % 100 + 1);
+		studentArray[i].setPassOrFail(studentArray[i].PassOrFail(studentArray[i].getStudentGrade()));
 		studentArray[i].print();
 	}
 
