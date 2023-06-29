@@ -25,6 +25,9 @@
     <Filter Include="Üst Bilgi Dosyaları\Advanced">
       <UniqueIdentifier>{f0629257-dc1f-4464-b8c6-0216a05d622a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\Operator Overloading">
+      <UniqueIdentifier>{40788d2c-60e8-4481-bf72-7e5de9e39677}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kaynak.cpp">
@@ -78,6 +81,9 @@
     </ClInclude>
     <ClInclude Include="Shape.h">
       <Filter>Üst Bilgi Dosyaları\Advanced</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorOverloading.h">
+      <Filter>Üst Bilgi Dosyaları\Operator Overloading</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

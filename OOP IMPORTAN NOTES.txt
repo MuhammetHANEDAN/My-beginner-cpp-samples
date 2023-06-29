@@ -633,6 +633,24 @@ public:
 		delete animalObject[i];
 	}
 
+OPERATÖRLERİN AŞIRI YÜKLENMESİ
+
+Classları tanımlayınca nesneler için hazır gelen iki operatör vardı . ve = operaötürleri.Aşırı
+yüklemede 2 sebebimiz var.İlki bu operatörlerden başka operatörleride nesneler üzerinde hazır 
+kullanılabilir hale getirmek. 2. sebebi ise operatörlerin tanımını isteğimiz doğrultusunda yenilemek
+değiştirmek.Kendimize yeni bir operatör oluşturamayız.Örnek olarak kisi diye sınıf tanımladık ve ++ ope
+ratörünü kisi sını içindeki yas değişkenini arttırması için ayarlayabilirz kisi ++ yapınca o işlemi yapar
+Var olan operatörlerin birbirlerine olan öncelik
+leride değiştirilemez.Operatorlerin aldığı argüman sayısıda değiştirilemez mesela == bir sağ bir de solu
+na argüman alır.
+
+Bazı operatörler overload edilemezler 6 adet
+1.Scope resolution operator (::)
+2.Pointer to member operator (.*)
+3.Member acces or Dot operator (.)
+4.Ternary or Conditional operator (?:)
+5.Object size operator (sizeof)
+6.Object type operator (typeof)
 
 
 
