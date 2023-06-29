@@ -7,6 +7,11 @@ public:
 	string empName, empSurname;
 	double empSalary;
 	Employee(string name, string surname, double salary);
+	Employee();
+	virtual ~Employee()
+	{
+		cout << "Employee destructor worked" << endl;
+	}
 	virtual void displayInformation() 
 	{
 		cout << "Name:" << empName << endl;
@@ -29,6 +34,10 @@ public:
 	{
 		mngDepartment = department;
 	};
+	~Manager()
+	{
+		cout << "Manager destructor worked" << endl;
+	}
 	void displayInformation() 
 	{
 		Employee::displayInformation();
@@ -72,17 +81,17 @@ private:
 	string personSurname;
 };
 
-void print(Person& personType) 
+void print(Employee &employeType) 
 {
-	personType.printInfo();
+	employeType.displayInformation();
 }
-void print2(Person* personType)
+void print2(Employee* employeeType)
 {
-	personType->printInfo();
+	employeeType->displayInformation();
 }
-void print3(Person personType) 
+void print3(Employee employeeType)
 {
-	personType.printInfo();
+	employeeType.displayInformation();
 }
 
 
@@ -98,5 +107,70 @@ public:
 	void print() 
 	{
 		cout << "Second class print function worked." << endl;
+	}
+};
+
+class Animal
+{
+public:
+	virtual void talk() = 0;
+	virtual ~Animal()
+	{
+		cout << "Animal destructor worked" << endl;
+	}
+	virtual void ömer()
+	{
+		cout << "Ben kucuk bir omer" << endl;
+	}
+};
+
+class Dog :public Animal
+{
+public:
+	~Dog()
+	{
+		cout << "Dog destructor worked" << endl;
+	}
+	void talk()
+	{
+		cout << "hav hav" << endl;
+	}
+	void ömer()
+	{
+		cout << "Omer kOpek aldi" << endl;
+	}
+};
+
+class Cat :public Animal
+{
+public:
+	~Cat()
+	{
+		cout << "Cat destructor worked" << endl;
+	}
+	void talk()
+	{
+		cout << "Meov" << endl;
+	}
+	void ömer()
+	{
+		cout << "Omer kedi aldi" << endl;
+	}
+};
+
+class Duck :public Animal
+{
+public:
+	~Duck()
+	{
+		cout << "Duck destructor worked" << endl;
+	}
+	void talk()
+	{
+		cout << "Vak vak vak" << endl;
+	}
+	void ömer()
+	{
+		cout << "Omer ordek aldi" << endl;
 	}
 };

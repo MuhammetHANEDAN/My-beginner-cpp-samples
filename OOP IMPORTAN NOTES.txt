@@ -481,6 +481,115 @@ Mainde
 	Department:GameDev
 
 
+** Virtual fonksiyonların özelliklerini gösterebilmeleri için ya reference ile yada pointer ile çağı
+rılmaları kesinlikle gereklidir.Value ile çağırılan fonskyionlarda virtual özelliği çalışmaz.
+
+Bunun için yaptıgımız örnek asagıdadır.
+
+
+	Employee emp1 ("Muhammet","HANEDAN",30000);
+	Manager mng1("Muhammet", "HANEDAN", 30000, "GameDev");
+
+	
+	Employee *emp2 =new Employee("Muhammet","HANEDAN", 30000);
+	Manager *mng2=new Manager("Muhammet", "HANEDAN", 30000, "GameDev");
+
+	/*
+	void print(Employee &employeType) 
+{
+	employeType.displayInformation();
+}
+void print2(Employee* employeeType)
+{
+	employeeType->displayInformation();
+}
+void print3(Employee employeeType)
+{
+	employeeType.displayInformation();
+}
+*/
+	cout << "PASS BY REFERENCE " << endl;
+	print(emp1);
+	print(mng1);
+	cout << "---------------" << endl;
+	cout << "PASS BY POINTER " << endl;
+	print2(emp2);
+	print2(mng2);
+	cout << "---------------" << endl;
+	cout << "PASS BY VALUE " << endl;
+	print3(emp1);
+	print3(mng1);
+
+VIRTUAL DESTRUCTOR KAVRAMI
+
+Diyelimki upcasting işlemi uyguladık aşağıdaki gibi
+
+Employee* emp2 = new Manager("Muhammet", "HANEDAN", 30000, "GameDev");
+
+Employee base class Manager devired classtır.
+Şimdi upcasting işlemi ile oluşuturduğumuz bu nesneyi silmek istediğimizde delete işleminden sonra gör
+düğümüz şey sadece Employe clasın destrocutorunun çalıştığı Managerin destructorunun çalışmadığıdır bu
+yüzden destructor tanımlanırken base classta destructorun önüne virtual keywordu getirilierek bu sorun
+halledilmiş olur.
+
+class Employee 
+{
+public:
+	string empName, empSurname;
+	double empSalary;
+	Employee(string name, string surname, double salary);
+	Employee();
+	virtual ~Employee() // Burada
+	...
+
+PURE VIRTUAL FUNCTION VE ABSTRACT CLASS (SOYUT SINIF) KAVRAMLARI
+
+class Animal
+{
+public:
+	virtual void talk() = 0; //Bunun ile soyut sınıf yaptık.Pure virtual fonksiyondur.
+};
+Bu bir soyut sınıf olmuştur.Bu sınıftan nesne üretilemez ama pointer oluşturulabilir.İçerisinde pure
+olmayan fonksiyonlar ve değişkenler tutabilir.Amaç bunun altında yeni sınıflar oluşturup tek çatı altın
+da toplamaktır.
+
+class Animal
+{
+public:
+	virtual void talk() = 0;
+};
+
+class Dog :public Animal
+{
+public:
+	void talk()
+	{
+		cout << "hav hav" << endl;
+	}
+};
+
+class Cat :public Animal
+{
+public:
+	void talk()
+	{
+		cout << "Meov" << endl;
+	}
+};
+
+class Duck :public Animal
+{
+public:
+	void talk()
+	{
+		cout << "Vak vak vak" << endl;
+	}
+};
+
+
+
+
+
 --------------------------------------------------------
 
 NOTLAR
