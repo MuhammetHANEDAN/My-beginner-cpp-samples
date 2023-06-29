@@ -557,34 +557,81 @@ class Animal
 {
 public:
 	virtual void talk() = 0;
+	virtual ~Animal()
+	{
+		cout << "Animal destructor worked" << endl;
+	}
+	virtual void ömer()
+	{
+		cout << "Ben kucuk bir omer" << endl;
+	}
 };
 
 class Dog :public Animal
 {
 public:
+	~Dog()
+	{
+		cout << "Dog destructor worked" << endl;
+	}
 	void talk()
 	{
 		cout << "hav hav" << endl;
+	}
+	void ömer()
+	{
+		cout << "Omer kOpek aldi" << endl;
 	}
 };
 
 class Cat :public Animal
 {
 public:
+	~Cat()
+	{
+		cout << "Cat destructor worked" << endl;
+	}
 	void talk()
 	{
 		cout << "Meov" << endl;
+	}
+	void ömer()
+	{
+		cout << "Omer kedi aldi" << endl;
 	}
 };
 
 class Duck :public Animal
 {
 public:
+	~Duck()
+	{
+		cout << "Duck destructor worked" << endl;
+	}
 	void talk()
 	{
 		cout << "Vak vak vak" << endl;
 	}
+	void ömer()
+	{
+		cout << "Omer ordek aldi" << endl;
+	}
 };
+
+İlgili örnek mainde
+
+	
+	Dog* dogAnimal = new Dog();
+	Cat* catAnimal = new Cat();
+	Duck* duckAnimal = new Duck();
+	
+	Animal* animalObject[] = { dogAnimal,catAnimal,duckAnimal };
+	for (int i = 0; i < 3; i++)
+	{
+		animalObject[i]->talk();
+		animalObject[i]->ömer();
+		delete animalObject[i];
+	}
 
 
 

@@ -76,5 +76,8 @@
     <ClInclude Include="upcastingDowncasting.h">
       <Filter>Üst Bilgi Dosyaları\Advanced</Filter>
     </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Üst Bilgi Dosyaları\Advanced</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

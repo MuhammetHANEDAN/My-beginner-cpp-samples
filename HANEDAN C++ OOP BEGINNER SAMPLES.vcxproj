@@ -143,6 +143,7 @@
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Multiple Inheritance.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="Shape.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="upcastingDowncasting.h" />

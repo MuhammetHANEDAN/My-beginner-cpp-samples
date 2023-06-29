@@ -3,7 +3,7 @@
 #include <time.h>
 #include <math.h>
 #include <string.h>
-#include "upcastingDowncasting.h"
+#include "Shape.h"
 
 using namespace std;
 
@@ -11,19 +11,17 @@ using namespace std;
 int main()
 {
 	//srand(time(NULL));
-		
-	Dog* dogAnimal = new Dog();
-	Cat* catAnimal = new Cat();
-	Duck* duckAnimal = new Duck();
-	
-	Animal* animalObject[] = { dogAnimal,catAnimal,duckAnimal };
-	for (int i = 0; i < 3; i++)
+	Shape* shapeArray[] = { new Circle(5),new Rectangle(5,6) };
+	for (int i = 0; i < 2; i++)
 	{
-		animalObject[i]->talk();
-		animalObject[i]->ömer();
-		delete animalObject[i];
+		shapeArray[i]->calculateArea();
+		shapeArray[i]->calculatePerimeter();
+		shapeArray[i]->display();
+		delete shapeArray[i];
 	}
-	delete animalObject;
+		
+	
+	
 
 
 
