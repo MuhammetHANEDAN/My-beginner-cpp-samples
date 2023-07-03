@@ -652,7 +652,150 @@ Bazı operatörler overload edilemezler 6 adet
 5.Object size operator (sizeof)
 6.Object type operator (typeof)
 
+İlk örneğimiz konu ile ilgili
 
+class Person
+{
+private:
+	string personName, personSurname;
+	int personAge;
+public:
+	Person()
+	{
+		personName = "";
+		personSurname = "";
+		personAge = 0;
+	}
+	Person(string name, string surname, int age)
+	{
+		personName = name;
+		personSurname = surname;
+		personAge = age;
+	}
+	virtual ~Person()
+	{
+		cout << "Person destructed" << endl;
+	}
+	virtual void displayPerson();
+	bool operator ==(Person& oth); // == operatorunu yaptık
+	void operator++(); // ++ operatorunu yaptık
+};
+
+void Person::displayPerson()
+{
+	cout << personName << endl;
+	cout << personSurname << endl;
+	cout << personAge << endl;
+}
+
+bool Person::operator==(Person& oth)
+{
+	return(personName == oth.personName && personSurname == oth.personSurname);
+}
+
+void Person::operator++()
+{
+	personAge = personAge + 1;
+}
+
+Person person1("Muhammet", "HANEDAN", 25);
+	Person person2("Batuhan", "KAYA", 25);
+	person1 == person2 ? cout << "Same person" << endl : cout << "Not same person" << endl;
+	++person1;
+	person1.displayPerson();
+
+
+FRIEND FUCNTION KAVRMAI
+
+Friend fonksiyonlar sınıfta friend keywordu ile tanımlanırlar Örnek
+
+friend void PersonFriend(Person& othPerson)
+	{
+
+	}
+
+Friend fonksiyonlar sınıfın tüm üyelerine erişebilirler.Ancak erişimi direkt
+olarak yapamazlar ve bir nesne üzerinden erişim sağlarlar.
+Bazı operatörler sadece friend fonksiyonlar ile aşırı yük
+lenebiliyorlar.Mesela örnek
+
+friend bool operator!=(Person& firstobject, Person& secondobject)
+	{
+		return!(firstobject.personName == secondobject.personName && firstobject.personSurname == secondobject.personSurname);
+	}
+
+Özellikle input ve output operatorleri >> << sadece nonmember fonk yani friend fonk ile aşırı yüklenebi
+liyorlar.
+
+FUNCTION TEMPLATE KAVRAMI
+
+Diyelimki max ı döndüren bir fonksiyon yazacağız.Dönüş veri tipleri int , double , char , string tipinde
+olacak 4 fonksiyon yazabiliriz.Bunları yazmadan bir template yazarsak eğer foksiyonlar çağırılınca o 
+templateye uyarak kendi veri tiplerine göre davranırlar yani templateyi bir şablon olarak düşünebilirsin
+Örnek olarak aşağıda gösterdik
+
+int getMax(int a, int b)
+{
+	if (a > b)
+		return a;
+	return b;
+}
+double getMax(double a, double b)
+{
+	if (a > b)
+		return a;
+	return b;
+}
+char getMax(char a, char b)
+{
+	if (a > b)
+		return a;
+	return b;
+}
+string getMax(string a, string b)
+{
+	if (a > b)
+		return a;
+	return b;
+}
+
+**Böyle yapacağımıza template kullabiliriz aşağıdaki gibi
+
+template <class Type>
+Type getMax(Type a, Type b)
+{
+	if (a > b)
+		return a;
+	return b;
+}
+
+CLASS TEMPLATE KAVRAMI
+
+Class template ise yukarda anlattığımız function template gibi düşünebilirsin örnek olarak syntax yapısı
+ve mainde nasıl yazıldığı gösterildi aşağıda
+
+template <class Type>
+class Number
+{
+private:
+	Type data;
+public:
+	Number(Type mainData = 0)
+	{
+		data = mainData;
+	}
+	Type getData()
+	{
+		return data;
+	}
+};
+
+	Number<int> numberInt(1);
+	cout << numberInt.getData() << endl;
+	Number<double> numberDouble(5.5);
+	cout << numberDouble.getData() << endl;
+	Number<string> numberString("HANEDAN");
+	cout << numberString.getData() << endl;
 
 
 --------------------------------------------------------

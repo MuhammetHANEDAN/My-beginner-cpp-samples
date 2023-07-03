@@ -3,16 +3,17 @@
 #include <time.h>
 #include <math.h>
 #include <string.h>
-#include "Shape.h"
+#include "templateConcept.h"
 
 using namespace std;
+
 
 
 int main()
 {
 	//srand(time(NULL));
 	
-		
+	
 	
 	
 

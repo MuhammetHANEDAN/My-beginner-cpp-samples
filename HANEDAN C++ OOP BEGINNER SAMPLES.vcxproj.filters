@@ -28,6 +28,9 @@
     <Filter Include="Üst Bilgi Dosyaları\Operator Overloading">
       <UniqueIdentifier>{40788d2c-60e8-4481-bf72-7e5de9e39677}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\Template">
+      <UniqueIdentifier>{7c5ab63d-6e99-474e-b076-752070a0c79b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kaynak.cpp">
@@ -84,6 +87,9 @@
     </ClInclude>
     <ClInclude Include="OperatorOverloading.h">
       <Filter>Üst Bilgi Dosyaları\Operator Overloading</Filter>
+    </ClInclude>
+    <ClInclude Include="templateConcept.h">
+      <Filter>Üst Bilgi Dosyaları\Template</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
