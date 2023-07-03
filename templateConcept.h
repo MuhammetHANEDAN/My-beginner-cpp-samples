@@ -16,4 +16,15 @@ public:
 	{
 		return data;
 	}
+	Type operator+ (const Number& oth);
+	void display()
+	{
+		cout << data << endl;
+	}
 };
+
+template <class Type>
+Type Number<Type>::operator+(const Number& oth)
+{
+	return data + oth.data;
+}

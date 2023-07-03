@@ -31,6 +31,9 @@
     <Filter Include="Üst Bilgi Dosyaları\Template">
       <UniqueIdentifier>{7c5ab63d-6e99-474e-b076-752070a0c79b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\Exceptionalhandling">
+      <UniqueIdentifier>{ef89926b-27e1-4390-a205-504d0f586ce2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kaynak.cpp">
@@ -90,6 +93,9 @@
     </ClInclude>
     <ClInclude Include="templateConcept.h">
       <Filter>Üst Bilgi Dosyaları\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptionalHandling.h">
+      <Filter>Üst Bilgi Dosyaları\Exceptionalhandling</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

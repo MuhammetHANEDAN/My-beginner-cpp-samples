@@ -788,7 +788,18 @@ public:
 	{
 		return data;
 	}
+	Type operator+ (const Number& oth);
+	void display()
+	{
+		cout << data << endl;
+	}
 };
+
+template <class Type>
+Type Number<Type>::operator+(const Number& oth)
+{
+	return data + oth.data;
+}
 
 	Number<int> numberInt(1);
 	cout << numberInt.getData() << endl;
@@ -796,6 +807,75 @@ public:
 	cout << numberDouble.getData() << endl;
 	Number<string> numberString("HANEDAN");
 	cout << numberString.getData() << endl;
+
+	Number<int> number1(5);
+	number1.display();
+	Number<int> number2(6);
+	number2.display();
+	cout<< number1 + number2;
+
+
+HATA YAKALAMA (EXCEPTION HANDLING)
+
+1.Assert fonksiyonu
+
+Assert fonksiyonu içine aldığı koşul gerçekleşmezse programı durdurur.Programdan çıkılır.Örnek
+
+	float pay, payda, result;
+	cin >> pay; cin >> payda;
+	assert(payda != 0);
+	result = pay / payda;
+	cout << result
+
+2.Try Catch Yapısı
+
+Hata yakalama mekanizmasıdır.Hata alabileceğimizi düşündüğümüz kısımları try bloğunun içine yazarız.
+Ve orda kontrol ederiz.Assertten farkı şudur catch bloğundan sonra program çalışmaya devam eder.Prog
+ramı ordan sonra durdurmaz.
+
+	
+	float pay, payda, result;
+	string str = "Payda 0 olamaz";
+	
+	try
+	{
+		cout << "Enter pay" << endl;
+		cin >> pay;
+		cout << "Enter payda" << endl;
+		cin >> payda;
+
+		if (payda == 0)
+		{
+			throw str;
+		}
+		else if (payda < 0)
+		{
+			throw payda;
+		}
+		else // Default catch i çalıltırdı
+		{
+			throw 15;
+		}
+
+		result = pay / payda;
+		cout << result;
+	}
+	catch (string x) // görüldüğü gibi throwlanan veriye göre catchlenir
+	{
+		cout << x << endl;
+	}
+	catch (float x) // float veriyi catchler
+	{
+		cout << x << " bu sayi 0 dan kucuktur" << endl;
+	}
+	catch (...)	//Eğer throw dönüşüne uygun catch bulunmazsa bu çalışır.En altta yazılır.
+	{
+		cout << "Default cahtch worked" << endl;
+	}
+
+	HATA SINIFI OLUŞTURMA ÖRNEĞİ
+
+
 
 
 --------------------------------------------------------
