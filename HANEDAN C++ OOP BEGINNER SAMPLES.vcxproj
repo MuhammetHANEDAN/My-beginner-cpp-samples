@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Kaynak.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +143,7 @@
     <ClInclude Include="dynamicMemory.h" />
     <ClInclude Include="exceptionalHandling.h" />
     <ClInclude Include="Inheritance.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="MeshComponent.h" />
     <ClInclude Include="Multiple Inheritance.h" />

@@ -314,3 +314,27 @@ int main()
 	
 	selamla();
 	selamla("Muhammet");
+
+
+	STATIC KEYWORDU
+
+	Biliyoruzki fonksiyonlarýn içine yazdýðýmýz deðiþkenler local olarak tutulmakta ama 
+	aþaðýdaki örneðe bakarsan 
+
+	void Staticsample()
+{
+	int static x = 5;
+	x++;
+	cout << x;
+};
+
+int main()
+{
+	//srand(time(NULL));
+	
+	Staticsample();
+	Staticsample();
+	Staticsample();
+
+	x e static keywordu verdiðimiz için çýkan yazdýrýlan 678 olacaktýr . Yani static keywordu verdiðin 
+	deðiþkenler program çalýþtýkça korunurlar silinmezler .

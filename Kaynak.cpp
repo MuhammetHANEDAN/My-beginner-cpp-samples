@@ -6,25 +6,23 @@
 #include "templateConcept.h"
 #include <cassert>
 #include "exceptionalHandling.h"
-#include "FOR UE SAMPLES.H"
+#include "Item.h"
 
 
 using namespace std;
 
-void Staticsample()
-{
-	int static x = 5;
-	x++;
-	cout << x;
-};
+
 
 int main()
 {
 	//srand(time(NULL));
 	
-	Staticsample();
-	Staticsample();
-	Staticsample();
+	Item item1;
+	cout << item1.getItemName() << endl;
+
+	
+	
+	
 	
 	
 
