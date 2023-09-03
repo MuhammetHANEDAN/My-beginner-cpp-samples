@@ -34,6 +34,9 @@
     <Filter Include="Üst Bilgi Dosyaları\Exceptionalhandling">
       <UniqueIdentifier>{ef89926b-27e1-4390-a205-504d0f586ce2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\Deneme">
+      <UniqueIdentifier>{9a05d9d9-50e1-4067-bdc2-78a98d399aac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kaynak.cpp">
@@ -96,6 +99,12 @@
     </ClInclude>
     <ClInclude Include="exceptionalHandling.h">
       <Filter>Üst Bilgi Dosyaları\Exceptionalhandling</Filter>
+    </ClInclude>
+    <ClInclude Include="FOR UE SAMPLES.H">
+      <Filter>Üst Bilgi Dosyaları\Deneme</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshComponent.h">
+      <Filter>Üst Bilgi Dosyaları\Deneme</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
