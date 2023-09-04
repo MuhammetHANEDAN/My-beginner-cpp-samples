@@ -7,6 +7,8 @@
 #include <cassert>
 #include "exceptionalHandling.h"
 #include "Item.h"
+#include "upcastingDowncasting.h"
+
 
 
 using namespace std;
@@ -17,11 +19,10 @@ int main()
 {
 	//srand(time(NULL));
 	
-	Item item1;
-	cout << item1.getItemName() << endl;
-
-	
-	
+	Animal* p;
+	Dog dog1;
+	p = &dog1;
+	p->talk();
 	
 	
 	

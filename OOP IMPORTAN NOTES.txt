@@ -58,6 +58,9 @@ Diyelimki mainde şöyle bişi yazdık
 		Burada lokal bir nesne olmuş oluyor blop bittiği an destructor çalışır.Yani destructor nesne yok
 		olduğu an çalışır.
 
+*** Destructorların temel amacı sınıfların içinde oluşturduğunuz pointerları delete etmektir.Önemli
+bir husustur.Pointerları böyle silmezsen Memory Leak oluşur.
+
 
 COPY CONSTRUCTOR
 
@@ -77,7 +80,8 @@ la sınıftanda miras alınabilir yani :D
 Sınıflar arasında alt üst ilişkisi sağlar
 Mesela hayvan sınıfı ürettik oraya ortak özellikler yazdık sonra o sınıftan miras alarak kedi sınıfını
 nı ürettik oraya kediye özel olanları yazdık, hayvan sınıfından miras alarak köpek ürettik gibi.
-* Priavate olanlar miras verilemezler
+* Priavate olanlar miras verilirler ama erişim için get fonksiyonları gerekir.Yani ne olursa olsun 
+priavate olarak kalırlar miras alma leveline bakmaksızın
 * Üst sınıfın Constructor ve destructor miras alınamazlar bir şekilde kullanılabilirler.
 * Üst sınıfın friend fonksiyonları miras alınamaz
 * Üst sınıftaki eşitlikleri miras alamayız
@@ -212,6 +216,30 @@ CClass(int c1,int c2,int c3):AClass(c3),BClass(c2)
 		z = c1;
 		cout << "CClass constructor worked" << endl;
 	}
+
+STATIC keywordu örnek
+
+class Bird :public Animal
+{
+public:
+	int BirdAge;
+	static int birdSayisi;
+	Bird(int _Age,string _Name):Animal (_Name)
+	{
+		BirdAge = _Age;
+		birdSayisi++;
+	}
+	~Bird()
+	{
+		birdSayisi--;
+	}
+}; Burada mesela bakarsan static keywordu ile bir değişken oluşturduğumuz için programın lifetime ı
+devam ettikçe asla silinmeyecektir böylece kaç tane bird nesnesi oluşturulduğunu bilebiliriz.
+static int birdSayisi = 0; diyemiyoruz const static int birdSayisi = 0; dememiz gerekir ama öyle yapar
+sak asla değişmez değer onun için yukarıdaki gibi bırakıyoruz ilgili sınıfın
+cpp sindede başlangıçta değerini 0 a eşit
+liyoruz.Aslında daha doğru olan static method oluşturup o methodlar initialize etmektir.
+
 
 DYNAMIC MEMORY
 
@@ -706,6 +734,14 @@ Person person1("Muhammet", "HANEDAN", 25);
 
 
 FRIEND FUCNTION KAVRMAI
+Diyelimki bir classın içinde başına friend koyduğun bir fonk var artık o fonk ile aynı isme sahipse 
+dışarıda olan bir fonksiyon (yani son dediğimin başında sadece friend olmucak gerisi full aynı olacak)
+O fonksiyon classın priavete üyelerine erişim sağlabilir oluyor.
+Aynı şekilde bir classı da friend yapabilrsin yaparsan o class artık senin priavate ve öbür değişkenle
+rine erişebilir oluyor yapısı şöyle 
+
+Classının içinde publicte:
+friend class ...; şeklinde olur 3 nokta friend yapmak istediğin classın ismidir.
 
 Friend fonksiyonlar sınıfta friend keywordu ile tanımlanırlar Örnek
 
@@ -1064,6 +1100,9 @@ int a[3][3];
 	* String sınıfının fonksiyonları ile birlikte etkin kullanımı - Dosya işlemleri 
 
 	* Ogün birinci 49-52
+
+	* Yazılım teknolojileri try catch ile hata yakalama ileri seviye
+
 
 ------------------------------------
 

@@ -136,6 +136,7 @@
     <Text Include="OOP IMPORTAN NOTES.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animal.h" />
     <ClInclude Include="bankAccount.h" />
     <ClInclude Include="complexNumber.h" />
     <ClInclude Include="Date.h" />
